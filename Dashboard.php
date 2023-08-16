@@ -2,8 +2,8 @@
 <head>
     <title>Dashboard</title>
 </head>
-<link rel="stylesheet" href="NavStyle.css" />
-<link rel="stylesheet" href="footer.css" />
+<link rel="stylesheet" href="./css/NavStyle.css" />
+<link rel="stylesheet" href="./css/footer.css" />
 <style>
   body{
     padding: 0px;

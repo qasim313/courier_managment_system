@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Shipment</title>
-    <link rel="stylesheet" href="NavStyle.css" />
-    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="./css/NavStyle.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
     <style>
         body {
             padding: 0px;
