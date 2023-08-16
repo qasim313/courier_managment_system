@@ -51,7 +51,7 @@ body {
   select {
     height: 37px;
     width: 87%;
-    border: 1px solid black;
+    border: none;
     font-size: 16px;
     outline: none;
     font-weight: 600;
