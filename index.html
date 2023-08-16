@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Courier Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN for icons -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .track-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    
+    .track-input input[type="text"] {
+      padding: 15px;
+      width: 400px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      outline: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+    
+    .track-input input[type="text"]:focus {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .track-input button {
+      margin-left: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background-color: black;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .track-input button:hover {
+      background-color: #005cbf;
+    }
+    
+    .logo {
+      font-size: 48px;
+      color: black;
+      margin-bottom: 30px;
+    }
+    
+    .description {
+      font-size: 20px;
+      color: #555;
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 50px;
+    }
+    
+    .login-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: black;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .login-button:hover {
+      background-color: #005cbf;
+      transform: scale(1.05);
+    }
+    
+    a{
+        color: white;
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="login-button"><a href="login.html">Login</a> </button>
+    <h1 class="logo"><i class="fas fa-shipping-fast"></i> Courier Management System</h1>
+    <p class="description">Track your courier delivery by entering the tracking ID below:</p>
+    <div class="track-input">
+        <form action="CourierStatus.php" method="POST">
+            <input type="text" name= "track_id"placeholder="Enter track ID" required>
+            <button type="submit">Track</button>
+        </form>
+    </div>
+  </div>
+</body>
+</html>

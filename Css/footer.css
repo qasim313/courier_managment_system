@@ -1,0 +1,28 @@
+footer {
+  background-color: #0d0c0c;
+  padding: 60px 0px;
+}
+.footer-content {
+  color: white;
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+.footer-content p {
+  margin: 30px 0px;
+}
+.footer-icon {
+  display: inline-flex;
+  padding: 0px 10px;
+}
+
+.footer-icon img {
+  width: 45px;
+  padding: 0px 7px;
+}
+.tagLine {
+  text-align: center;
+  padding: 30px 0px;
+  font-size: 40px;
+  font-weight: bolder;
+}
