@@ -36,6 +36,7 @@
                 </table>
             </center>
             ";
+            $connect->close();
 
 
 
