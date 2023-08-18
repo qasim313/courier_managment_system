@@ -1,0 +1,88 @@
+
+
+create table shipment ( 
+sh_id int primary key auto_increment,
+weight numeric not null , 
+category varchar(50) not null, 
+issue_date date not null ,
+delievery_date date not null
+ );
+
+create table shipper (
+s_id int primary key,
+name varchar(30) not null,
+address text,
+contact int(11)
+);
+
+
+create table courier(
+c_id int primary key,
+name varchar(30) , 
+status  text , 
+PASSWORD text not null , 
+address text, 
+contact int(11) );
+
+create table manager(
+	m_id int primary key,
+    name varchar(30) NOT null,
+    password text not null , 
+    contact int(11) 
+);
+
+
+create table customer (
+name varchar(30) not null,
+phone int(11),
+address text 
+
+);
+create TABLE payment (
+p_id int primary key,
+    tax numeric ,
+    total numeric ,
+     issue_date timestamp 
+);
+
+CREATE TABLE pay (
+s_id int , FOREIGN key (s_id) REFERENCES shipper(s_id) ,
+    sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id),
+    p_id int , FOREIGN key (p_id) REFERENCES payment (p_id)
+);
+CREATE TABLE assign (
+m_id int , FOREIGN KEY (m_id) REFERENCES manager (m_id) ,
+sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id),
+c_id int , FOREIGN key (c_id) REFERENCES courier (c_id),
+description text
+);
+
+alter table customer
+add  s_id int,
+add FOREIGN key (s_id) REFERENCES shipper (s_id);
+
+alter table payment 
+add m_id int,
+add FOREIGN key (m_id) REFERENCES manager (m_id);
+
+alter table courier 
+add m_id int,
+add FOREIGN key (m_id) REFERENCES manager (m_id);
+
+alter table shipper 
+add m_id int,
+add FOREIGN key (m_id) REFERENCES manager (m_id);
+
+
+alter table shipment
+add m_id int,
+add FOREIGN key (m_id) REFERENCES manager (m_id),
+add s_id int,
+add FOREIGN key (s_id) REFERENCES shipper (s_id),
+add c_id int,
+add FOREIGN key (c_id) REFERENCES courier (c_id);
+
+
+
+
+
