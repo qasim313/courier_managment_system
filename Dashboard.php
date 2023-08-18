@@ -83,16 +83,10 @@ tr:nth-child(even) {
      
     </style>
 <body >
-<nav class="nav">
-      <div class="nav-item">
-        <a href="dashboard.php"  class="active" >dashboard</a>
-        <a href="Add_courier.php" >add Courier</a>
-        <a href="ShipmentDetail.php" >add Shippment</a>
-        <a href="AssignShipment.php"  >Assign Shippment</a>
-        <a  href="Manage_courier.php" >Manage Courier</a>
-        <a  href="Manage_shipment.php" >Manage Shippment</a>
-      </div>
-    </nav>
+
+ <?php
+  include ("navBar.php");
+?> 
 
   <div class="header" style="padding-top: 70px;">
     <!-- <h1 style="color: rgb(10, 9, 9);">Manager's Dashboard</h1> -->

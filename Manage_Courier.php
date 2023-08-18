@@ -58,6 +58,10 @@
   <title>Manage Courier</title>
 </head>
 <body>
+  
+<?php
+  include ("navBar.php");
+?>
 <!-- <nav class="nav">
       <div class="nav-item">
         <a href="dashboard.php"  >dashboard</a>
@@ -128,6 +132,5 @@
         </div>
       <!-- $connect->close(); -->
     
-  
 </body>
 </html>

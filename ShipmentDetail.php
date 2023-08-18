@@ -10,16 +10,9 @@
     <title>Contact</title>
   </head>
   <body>
-  <nav class="nav">
-      <div class="nav-item">
-        <a href="dashboard.php"  >dashboard</a>
-        <a href="Add_courier.php" >add Courier</a>
-        <a href="ShipmentDetail.php" class="active" >add Shippment</a>
-        <a href="AssignShipment.php"  >Assign Shippment</a>
-        <a  href="Manage_courier.php" >Manage Courier</a>
-        <a  href="Manage_shipment.php" >Manage Shippment</a>
-      </div>
-    </nav>
+  <?php
+  include ("navBar.php");
+?>
     <div class="container">
       <form action="ShippementData.php" class="item1" method="post">
         <h3 class="item1-1">Shippment Detail</h3>

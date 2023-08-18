@@ -11,16 +11,9 @@
     <title>Area</title>
   </head>
   <body>
-    <nav class="nav">
-      <div class="nav-item">
-        <a href="dashboard.php"  >dashboard</a>
-        <a href="Add_courier.php" >add Courier</a>
-      <a href="ShipmentDetail.php" >add Shippment</a>
-      <a href="AssignShipment.php" class="active" >Assign Shippment</a>
-      <a  href="Manage_courier.php" >Manage Courier</a>
-      <a  href="Manage_shipment.php" >Manage Shippment</a>
-      </div>
-    </nav>
+  <?php
+  include ("navBar.php");
+?>
     <div class="container">
       <form action="" class="item1" method="post">
         <h3 class="item1-1">Assign Shippment</h3>

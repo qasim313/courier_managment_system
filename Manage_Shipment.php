@@ -67,16 +67,9 @@
   </style>
 </head>
 <body>
-    <nav class="nav">
-      <div class="nav-item">
-        <a href="dashboard.php"  >dashboard</a>
-        <a href="Add_courier.php" >add Courier</a>
-        <a href="ShipmentDetail.php" >add Shippment</a>
-        <a href="AssignShipment.php"  >Assign Shippment</a>
-        <a  href="Manage_courier.php" >Manage Courier</a>
-        <a  href="Manage_shipment.php" class="active">Manage Shippment</a>
-      </div>
-    </nav>
+<?php
+  include ("navBar.php");
+?>
 
       <div class="dashboard_table">
         <div  class ="table-content">
