@@ -1,4 +1,4 @@
-
+create database couriersystem
 
 create table shipment ( 
 sh_id int primary key auto_increment,
