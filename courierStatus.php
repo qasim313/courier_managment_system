@@ -109,7 +109,7 @@
           <span class="phase-name">Delivered</span>
         </div>
       </div>
-    </div>
+    </div >
     
     <div class="card">
       <h1 class="card-title">Item Details</h1>

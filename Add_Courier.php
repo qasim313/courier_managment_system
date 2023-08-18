@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/NavStyle.css" />
 
+    
     <title>Contact</title>
   </head>
   <body>
