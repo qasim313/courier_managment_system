@@ -9,7 +9,7 @@
   <title>Manage Courier</title>
 </head>
 <body>
-<nav class="nav">
+<!-- <nav class="nav">
       <div class="nav-item">
         <a href="dashboard.php"  >dashboard</a>
         <a href="Add_courier.php"  >add Courier</a>
@@ -18,6 +18,39 @@
         <a  href="Manage_courier.php"  class="active" >Manage Courier</a>
         <a  href="Manage_shipment.php" >Manage Shippment</a>
       </div>
-    </nav>
+    </nav> -->
+
+
+
+    <?php
+      include ('connection.php');
+
+      $sql = "select * from courier";
+
+
+      $result = $sql->query($sql);
+
+
+
+      while ($row = $result->fetch_assoc()) {
+
+        echo "
+
+
+        <tr>
+
+          <td>$row[name]</td>
+          <td>.$row['c_id'].</td>
+          <td>.$row['status'].</td>
+         
+
+        
+        </tr>
+        
+        
+        ";
+      }
+    
+    ?>
 </body>
 </html>

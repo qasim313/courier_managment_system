@@ -1,12 +1,21 @@
 <?php
 
-$connect = mysqli_connect ("localhost", "root" , "" , "courior_managment_system");
+    include ('connection.php');
 
 
     $c_id = $_REQUEST['id'];
     $c_name = $_REQUEST['name'];
     $c_location = $_REQUEST['location'];
-    $c_contect = $_REQUEST['ph'];
+    $c_contact = $_REQUEST['ph'];
+    $pass = $_REQUEST['password'];
+    $status = $_REQUEST['status'];
+
+
+    $sql = "INSERT INTO `courier`(c_id ,  `name`, `status`, `PASSWORD`, `address`, `contact`) VALUES ('$c_id' , '$c_name' , '$status' , '$pass' , '$c_location', '$c_contact' )";
+
+    $connect->query($sql);
+
+   
 
 
     echo "
@@ -22,10 +31,13 @@ $connect = mysqli_connect ("localhost", "root" , "" , "courior_managment_system"
                         <td>$c_name</td>
                         <td>$c_id</td>
                         <td>$c_location</td>
-                        <td>$c_contect</td>
+                        <td>$c_contact</td>
                     </tr>
                 </table>
             </center>
             ";
+
+
+
 
 ?>

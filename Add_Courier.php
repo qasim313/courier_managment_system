@@ -35,7 +35,7 @@
         <label for="location">Address:</label>
         <input type="text" name="location" id="">
         <label for="password">password:</label>
-        <input type="text" name="password" id="">
+        <input type="password" name="password" id="">
 
         <label for="">status:</label>
         <select name="status" id="status">
