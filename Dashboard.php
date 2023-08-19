@@ -3,194 +3,114 @@
     <title>Dashboard</title>
 </head>
 <link rel="stylesheet" href="./css/NavStyle.css" />
-<link rel="stylesheet" href="./css/footer.css" />
-<style>
-  body{
-    padding: 0px;
-    margin: 0px;
-  /* background-image: url("pic/backmap2.jpg"); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: sans-serif !important;
-  }
+<link rel="stylesheet" href="./css/TableStyle.css" />
 
 
 
-    .dashboard_table{
+    <style>
+
+      .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .card {
+          display :inline-flex;
+          justify-content: space-between;
+          padding : 10px 8px ;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 40%;
+          border-radius: 5px;
+          margin: 10px;
+          height: 20vh;
+          color: #37bc9b;
+
+      }
       
-        padding: 20px;
-        margin: 20px;
-        background-color: #fff;
-        border-radius: 15px;
-    }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+      
 
-    table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th {
-  background-color: #04AA6D;
-  color: white;
-}
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-    .header{
-       
-        color: black;
-        padding: 15px;
-
-    }
-    .container{
-      background: rgba(255, 255, 255, 0.33);
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 30px; */
-  backdrop-filter: blur(5.1px);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        border-radius: 10px;
-        padding: 120px 0px ;
-    }
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      width: 40%;
-      border-radius: 5px;
-        margin: 10px;
-        font-size: large;
-        font-weight: 600;
-        height: 100%;
-    }
     
-    .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-    
-    img {
-      border-radius: 5px 5px 0 0;
-    }
-    
-    .container {
-      padding: 2px 16px;
-    }
-     
+      
     </style>
 <body >
-<nav class="nav">
-      <div class="nav-item">
-        <a href="dashboard.php"  class="active" >dashboard</a>
-        <a href="Add_courier.php" >add Courier</a>
-        <a href="ShipmentDetail.php" >add Shippment</a>
-        <a href="AssignShipment.php"  >Assign Shippment</a>
-        <a  href="Manage_courier.php" >Manage Courier</a>
-        <a  href="Manage_shipment.php" >Manage Shippment</a>
-      </div>
-    </nav>
+<nav>
+        <ul>
+          <li><a href="Dashboard.php">DashBoard</a></li>
+          <li><a href="AssignShipment.php">Assign</a></li>
+          <li><a href="#">Add</a>
+            <ul>
+              <li><a href="ShipmentDetail.php">Shippment</a></li>
+              <li><a href="Add_Courier.php">Courier</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Manage</a>
+              <ul>
+                  <li><a href="Manage_Shipment.php">Shippment</a></li>
+                  <li><a href="Manage_Courier.php">Courier</a></li>
+              </ul>
+          </li>
+        </ul>
+        <button><a href="">Logout</a></button>
+      </nav>
 
-  <div class="header" style="padding-top: 70px;">
-    <!-- <h1 style="color: rgb(10, 9, 9);">Manager's Dashboard</h1> -->
-</div>
-    
-<div class="container">
+      <main> 
+          <div class="container">
+              <div class="card">
+                  <h2>Total Shipments</h2>
+                  <?php
+                      $num = 1;
+                      echo "<h2>$num </h2>";
+                  ?>
 
-<div class="card">
-  <div class="container">
-    <h2><b>Total shippments</b></h2> 
-    <h4>25</h4> 
-  </div>
-</div>
+              </div>
+              <div class="card">
+                  <h2>Delivered Shipments</h2>
+                  <?php
+                      $num = 1;
+                      echo "<h2>$num </h2>";
+                  ?>
+              </div>
+              <div class="card">
+                  <h2>Assigned Shipments</h2>
+                  <?php
+                      $num = 1;
+                      echo "<h2>$num</h2>";
+                  ?>
 
-<div class="card">
-    <div class="container">
-      <h2><b>Assigned shippments</b></h2> 
-      <h4>25</h4> 
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="container">
-      <h2><b>Delivered</b></h2> 
-      <h4>25</h4> 
-    </div>
-  </div>
-</div>
-
-<div class="dashboard_table">
-    <h1>Recent Dileveries</h1>
-    <table>
-        <tr>
-            <th>Shippment ID</th>
-            <th>Customer Name</th>
-            <th>Customer Phone</th>
-            <th>Customer Address</th>
-            <th>Shippment Status</th>
-            <th>Shippment Date</th>
-            <th>Delivery Date</th>
-            <th>Delivery Status</th>
-            
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>1234567890</td>
-            <td>123, abc street, xyz city</td>
-            <td>Assigned</td>
-            <td>12/12/2020</td>
-            <td>12/12/2020</td>
-            <td>Delivered</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>1234567890</td>
-            <td>123, abc street, xyz city</td>
-            <td>Assigned</td>
-            <td>12/12/2020</td>
-            <td>12/12/2020</td>
-            <td>Delivered</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>1234567890</td>
-            <td>123, abc street, xyz city</td>
-            <td>Assigned</td>
-            <td>12/12/2020</td>
-            <td>12/12/2020</td>
-            <td>Delivered</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>1234567890</td>
-            <td>123, abc street, xyz city</td>
-            <td>Assigned</td>
-            <td>12/12/2020</td>
-            <td>12/12/2020</td>
-            <td>Delivered</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>1234567890</td>
-            <td>123 abc street, xyz city</td>
-            <td>Assigned</td>
-            <td>12/12/2020</td>
-            <td>12/12/2020</td>
-            <td>Delivered</td>
-            
-        </tr>
-    </table>
+              </div>
+          </div>
+          <div class="dashboard_table">
+              <h1>Recent Dileveries</h1>
+              <table>
+                  <tr>
+                      <th>Shippment ID</th>
+                      <th>Customer Name</th>
+                      <th>Customer Phone</th>
+                      <th>Customer Address</th>
+                      <th>Shippment Status</th>
+                      <th>Shippment Date</th>
+                      <th>Delivery Date</th>
+                      <th>Delivery Status</th>
+                      
+                  </tr>
+                  
+              </table>
 
 
-</div>
+          </div>
+      </main>
+
+ 
+
+
+      
 
 </body>
 </html>

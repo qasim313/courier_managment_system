@@ -58,7 +58,7 @@
   <title>Manage Courier</title>
 </head>
 <body>
-<!-- <nav class="nav">
+<nav class="nav">
       <div class="nav-item">
         <a href="dashboard.php"  >dashboard</a>
         <a href="Add_courier.php"  >add Courier</a>
@@ -67,7 +67,7 @@
         <a  href="Manage_courier.php"  class="active" >Manage Courier</a>
         <a  href="Manage_shipment.php" >Manage Shippment</a>
       </div>
-    </nav> -->
+    </nav>
 
 
 
@@ -126,7 +126,9 @@
 
             </table>
         </div>
-      <!-- $connect->close(); -->
+        <?php
+             $connect->close(); 
+        ?>
     
   
 </body>
