@@ -35,37 +35,13 @@
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
       }
       
-
-    
-      
     </style>
 <body >
 
  <?php
- //sh_id	weight	category	issue_date	delievery_date	m_id	s_id	c_id
-  //include ("navBar.php");
   include ("connection.php");
+  include ("navBar.php")
 ?> 
-
-<nav>
-        <ul>
-          <li><a href="Dashboard.php">DashBoard</a></li>
-          <li><a href="AssignShipment.php">Assign</a></li>
-          <li><a href="#">Add</a>
-            <ul>
-              <li><a href="ShipmentDetail.php">Shippment</a></li>
-              <li><a href="Add_Courier.php">Courier</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Manage</a>
-              <ul>
-                  <li><a href="Manage_Shipment.php">Shippment</a></li>
-                  <li><a href="Manage_Courier.php">Courier</a></li>
-              </ul>
-          </li>
-        </ul>
-        <button><a href="">Logout</a></button>
-      </nav>
 
       <main> 
           <div class="container">
@@ -123,9 +99,5 @@
 </html>
 
 <?php
-  include ("connection.php");
   include ("footer.php");
-    
-
-
 ?>
