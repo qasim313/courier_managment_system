@@ -85,5 +85,18 @@ add FOREIGN key (c_id) REFERENCES courier (c_id);
 
 
 
+-- insert statments , abdul rehman
+
+insert into manager(name , password , contact) values ('abdul rehman' , '123' , 1234567890);
+insert into courier(    name , status , password , address , contact) values ('abdul rehman' , 'available' , '123' , 'abc' , 1234567890);
+insert into shipper(name , address , contact) values ('abdul rehman' , 'abc' , 1234567890);
+insert into customer(name , phone , address) values ('abdul rehman' , 1234567890 , 'abc');
+insert into shipment(weight , category , issue_date , delievery_date) values (123 , 'abc' , '2019-12-12' , '2019-12-12');
+insert into payment(tax , total , issue_date) values (123 , 123 , '2019-12-12');
+insert into assign(m_id , sh_id , c_id , description) values (33001 , 2000 , 22001 , 'abc');
+insert into pay(s_id , sh_id , p_id) values (33001 , 2000 , 2023080001);
+
+
+
 
 

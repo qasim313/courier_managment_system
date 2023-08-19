@@ -31,25 +31,28 @@
         }
 
   .table-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      
-          background: rgba(255, 255, 255, 0.33);
-          backdrop-filter: blur(5.1px);
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 30px;
-          width: 90%;
-          padding: 25px 0px;
-          border-radius: 22px;
+    padding: 20px;
+        margin: 20px;
+        background-color: #fff;
+        border-radius: 15px;
   }
-  th,td {
-    padding: 20px 20px 20px 30px;
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
 
-  } 
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-  td {
-    text-align: center;
-  }
   h3 {
     font-size: 26px;
   text-transform: uppercase;
@@ -67,73 +70,69 @@
   </style>
 </head>
 <body>
+
 <?php
   include ("navBar.php");
+  include ("connection.php");
+  //sh_id	weight	category	issue_date	delievery_date	m_id	s_id	c_id
+  $sql="SELECT * FROM `shipment`";
+  $result=mysqli_query($connect,$sql);
+  if($result->num_rows>0){
+    echo '
+    <div class="dashboard_table">
+    <div class="table-content">
+    <h3>Manage Shipment</h3>
+    <table>
+    <tr>
+        <th>Shipment ID</th>
+        <th>Weight</th>
+        <th>Category</th>
+        <th>Issue Date</th>
+        <th>Delievery Date</th>
+        <th>Manager ID</th>
+        <th>Supplier ID</th>
+        <th>Customer ID</th>
+        <th>Manage</th>
+    </tr>';
+    
+    while($row=mysqli_fetch_assoc($result)){
+      $sh_id=$row['sh_id'];
+      $weight=$row['weight'];
+      $category=$row['category'];
+      $issue_date=$row['issue_date'];
+      $delievery_date=$row['delievery_date'];
+      $m_id=$row['m_id'];
+      $s_id=$row['s_id'];
+      $c_id=$row['c_id'];
+      
+      echo '  
+
+            <tr>
+                <td>'.$sh_id.'</td>
+                <td>'.$weight.'</td>
+                <td>'.$category.'</td>
+                <td>'.$issue_date.'</td>
+                <td>'.$delievery_date.'</td>
+                <td>'.$m_id.'</td>
+                <td>'.$s_id.'</td>
+                <td>'.$c_id.'</td>
+                <td  class="btn-instance">
+                  <!-- <a href=""  class="manage">update</a> 
+                  <a href=""  class="manage">Delete</a> -->
+                  <input type="button" value="Update" class="manage" name="update">
+                  <input type="button" value="Delete" class="manage" name="delete" >
+
+                </td>
+            </tr>';
+    }
+
+        echo "</table>";
+
+  }
+    
 ?>
 
-      <div class="dashboard_table">
-        <div  class ="table-content">
-          <h3>Delivery Details</h3>
-        <table>
-          
-         
-            <tr>
-                <th>Shipment id</th>
-                <th>Shipment Name</th>
-                <th>Reciever Name</th>
-                <th>Delivery Date</th>
-                <th>Delivery Status</th>
-                <th>Amount Status</th>
-                <th>Address</th>
-                <th>Manage</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>1234567890</td>
-                <td>123, abc street, xyz city</td>
-                <td>John Doe</td>
-                <td>1234567890</td>
-                <td>123, abc street, xyz city</td>
-                <td  class="btn-instance">
-                  <a href=""  class="manage">update</a> 
-                  <a href=""  class="manage">Delete</a>
-                </td>
-            </tr>
-        </table>
-      </div>
-    
-    
-    </div>
-
-      <footer>
-        <div class="footer-content">
-          <h1>company name</h1>
-          <p>
-            <b>company name</b>
-            456 Park Avenue,
-            Lahore, lhr,
-            Pakistan,
-            10001
-          </p>
-          <div class="footer-icon">
-            <a href="#">
-              <img src="pic/facebook.png" alt="" />
-            </a>
-            <a href="#">
-              <img src="pic/telegram.png" alt="" />
-            </a>
-            <a href="#">
-              <img src="pic/instagram.png" alt="" />
-            </a>
-            <a href="#">
-              <img src="pic/linkedin.png" alt="" />
-            </a>
-            <a href="#">
-              <img src="pic/youtube.png" alt="" />
-            </a>
-          </div>
-        </div>
-      </footer>
 </body>
 </html>
+
+
