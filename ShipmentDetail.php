@@ -10,16 +10,9 @@
     <title>Contact</title>
   </head>
   <body>
-  <nav class="nav">
-      <div class="nav-item">
-        <a href="dashboard.php"  >dashboard</a>
-        <a href="Add_courier.php" >add Courier</a>
-        <a href="ShipmentDetail.php" class="active" >add Shippment</a>
-        <a href="AssignShipment.php"  >Assign Shippment</a>
-        <a  href="Manage_courier.php" >Manage Courier</a>
-        <a  href="Manage_shipment.php" >Manage Shippment</a>
-      </div>
-    </nav>
+  <?php
+  include ("navBar.php");
+?>
     <div class="container">
       <form action="ShippementData.php" class="item1" method="post">
         <h3 class="item1-1">Shippment Detail</h3>
@@ -36,16 +29,21 @@
                 <input type="text" name="s-address" id="">
   
                 <label for="">Shippment id:</label>
-                <input type="text" name="sh-id" id="">
+                <input type="text" name="sh-id" id="" placeholder="auto-generated" disabled>
 
                 <label for="">shippment Weight:</label>
                 <input type="text" name="sh-weight" id="">
 
                 <label for="">Category:</label>
-                <input type="text" name="type" id="">
+                <select name="type" id="payMethod">
+                  <option value="Document shipments">Document shipments</option>
+                  <option value="Package shipments">Package shipments</option>
+                  <option value="Fragile shipments">Fragile shipments</option>
+                  <option value="Express shipments">Express shipments</option>
+                  <option value="High Value shipments">High Value shipments</option>
+                </select>
 
                 <label for="">Shippment status:</label>
-
                 <select name="payMethod" id="payMethod">
                   <option value="active">active</option>
                   <option value="inactive">inactive</option>
@@ -57,24 +55,21 @@
               <div class="right-data">
 
                 <label for="">Place Date:</label>
-                <input type="date" name="fdate" id="">
+                <input type="date" name="p-date" id="">
 
                 <label for="">Delivery Date:</label>
-                <input type="date" name="ddate" id="">
+                <input type="date" name="d-date" id="">
                 
   
 
                 <label for="">Receiver Name:</label>
                 <input type="text" name="r-name">
   
-                <label for="">Receiver contect:</label>
-                <input type="tel" name="r-id" id="">
-
-                <label for="">Receiver Email:</label>
-                <input type="email" name="mail" id="">
+                <label for="">Receiver contact:</label>
+                <input type="tel" name="r-contact" id="">
   
                 <label for="">Receiver Address:</label>
-                <input type="text" name="r-location" id="">
+                <input type="text" name="r-address" id="">
 
                 <label for="">Payment status</label>
 
