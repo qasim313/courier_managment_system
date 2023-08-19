@@ -6,6 +6,30 @@
     <link rel="stylesheet" href="./css/FormStyling.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/NavStyle.css" />
+  <style> 
+    .table-content {
+    padding: 20px;
+        margin: 20px;
+        background-color: #fff;
+        border-radius: 15px;
+  }
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
 
 
     <title>Area</title>
@@ -13,59 +37,63 @@
   <body>
   <?php
   include ("navBar.php");
+  include ("connection.php");
+
+  $sql= "select * from shipment";
+  $result = mysqli_query($connect,$sql);
+  if($result->num_rows > 0){
+ //sh_id	weight	category	issue_date	delievery_date	m_id	s_id	c_id
+    echo '
+    <div class="dashboard_table">
+    <div class="table-content">
+    <h3>Manage Shipment</h3>
+    <table>
+    <tr>
+        <th>Shipment ID</th>
+        <th>Weight</th>
+        <th>Category</th>
+        <th>Issue Date</th>
+        <th>Delievery Date</th>
+        <th>Manager ID</th>
+        <th>Supplier ID</th>
+        <th>Customer ID</th>
+        <th>Assign To</th>
+    </tr>';
+
+    while($row=mysqli_fetch_assoc($result)){
+      $sh_id=$row['sh_id'];
+      $weight=$row['weight'];
+      $category=$row['category'];
+      $issue_date=$row['issue_date'];
+      $delievery_date=$row['delievery_date'];
+      $m_id=$row['m_id'];
+      $s_id=$row['s_id'];
+      $c_id=$row['c_id'];
+
+      echo '  
+        <tr>
+            <td>'.$sh_id.'</td>
+            <td>'.$weight.'</td>
+            <td>'.$category.'</td>
+            <td>'.$issue_date.'</td>
+            <td>'.$delievery_date.'</td>
+            <td>'.$m_id.'</td>
+            <td>'.$s_id.'</td>
+            <td>'.$c_id.'</td>
+            <td><a href="assign_to.php?sh_id=$row[sh_id]" style="width: 100%; border: 2px solid black; border-radius: 10px; padding: 2px; background: black; color: white; cursor: pointer;">Assigned To</a></td>
+        </tr>';
+    }
+      
+          echo "</table>";
+  }
+  else{
+    echo "0 result";
+  }
+
+
 ?>
-    <div class="container">
-      <form action="" class="item1" method="post">
-        <h3 class="item1-1">Assign Shippment</h3>
 
-        <select name="" id="area-select">
-            <!-- <option value="">Select Area</option> -->
-            <option value="">Jannah road</option>
-            <option value="">Ghanta ghar</option>
-            <option value="">Alam chok</option>
-            <option value="">College Road</option>
-            <option value="">Model Town</option>
-            <option value="">Wapda Town</option>
-            <option value="">Awan Chok</option>
-            <option value="">Pindi bypass</option>
-            <option value="">Satlite Town</option>
-            <option value="">People colony</option>
-        </select>
 
-            
-        <br />
-        <input type="submit" value="Search" onclick="showTable()" id="btn" />
-      </form>
-    </div>
-
-    <!-- <div class="dashboard_table" id="dashboard_td" >
-      <div  class ="table-content">
-        <h3>Delivery Details</h3>
-      <table>
-        
-       
-          <tr>
-              <th>Shipment id</th>
-              <th>Shipment Name</th>
-              <th>Reciever Name</th>
-              <th>Delivery Date</th>
-              <th>Delivery Status</th>
-              <th>Amount Status</th>
-              <th>Address</th>
-          </tr>
-          <tr>
-              <td>1</td>
-              <td>John Doe</td>
-              <td>1234567890</td>
-              <td>123, abc street, xyz city</td>
-              <td>John Doe</td>
-              <td>1234567890</td>
-              <td>123, abc street, xyz city</td>
-          </tr>
-      </table>
-    </div>
-  
-   -->
   </div>
     <footer>
       <div class="footer-content">
