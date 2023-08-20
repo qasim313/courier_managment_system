@@ -90,7 +90,7 @@ tr:nth-child(even) {
         <th>Issue Date</th>
         <th>Delievery Date</th>
         <th>Manager ID</th>
-        <th>Supplier ID</th>
+        <th>Shipper ID</th>
         <th>Customer ID</th>
         <th>Manage</th>
     </tr>';
