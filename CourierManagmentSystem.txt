@@ -12,7 +12,7 @@ create table shipper (
 s_id int primary key auto_increment,
 name varchar(30) not null,
 address text,
-contact int(11)
+contact varchar(11)
 )auto_increment=33001;
 
 
@@ -22,22 +22,24 @@ name varchar(30) ,
 status  text , 
 PASSWORD text not null , 
 address text, 
-contact int(11) )auto_increment=22001;
+contact varchar(11) )auto_increment=22001;
 
 create table manager(
-	m_id int primary key auto_increment,
+	m_id int primary key,
     name varchar(30) NOT null,
     password text not null , 
-    contact int(11) 
-)auto_increment=33001;
+    contact varchar(11) 
+);
+
+insert into manager(m_id,name,password,contact)
+values(33001,'Abdul Mateen',1122,'03122323432');
 
 
 create table customer (
 name varchar(30) not null,
-phone int(11),
-address text 
+phone varchar(11),
+address text );
 
-);
 create TABLE payment (
     p_id int primary key auto_increment,
     amount decimal(10,3),
@@ -82,11 +84,3 @@ add s_id int,
 add FOREIGN key (s_id) REFERENCES shipper (s_id),
 add c_id int,
 add FOREIGN key (c_id) REFERENCES courier (c_id);
-
-
-
-
-
-
-
-
