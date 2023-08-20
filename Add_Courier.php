@@ -31,7 +31,7 @@
         <input type="password" name="password" id="">
 
         <label for="">status:</label>
-        <select name="status" id="status"">
+        <select name="status" id="status">
           <option value="active">active</option>
           <option value="inactive">inactive</option>
         </select>

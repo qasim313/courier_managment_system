@@ -1,72 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>           
+    <title>Manage Courier</title>
+    <link rel="stylesheet" href="./css/TableStyle.css" />
+    <style> 
+        td a {
+            text-decoration :none;
+            color:black;
+            font-size:larger;
+            font-weight:bold; 
+        }
+        tr th {
+            text-transform :uppercase;
+        }
+        tr td {
+            font-weight:bold; 
+        }
 
-  <!-- <link rel="stylesheet" href="footer.css" /> -->
-  <link rel="stylesheet" href="./css/NavStyle.css" />
-  <style>
-
-            table {
-                border: solid black 5px;
-                border-radius: 10px;
-                background-color: #ffffff72;
-                box-shadow: black 2px 2px 2px;
-                /* align-self: center; */
-                width: 100%;
-
-
-            }
-            #head_1 {
-                border: solid black 5px;
-                /* background-color: blue; */
-            }
-            div {
-                display: flex;
-                flex-direction: column;
-                /* /* justify-content: center; */
-                justify-items: center; 
-                /* width: 70%; */
-                width: 100%;
-                padding : 120px 0px ;
-            }
-            body {
-                margin: 0px;
-                padding: 0px;
-                /* background-color: rgba(165, 42, 42, 0.692); */
-                /* color: white; */
-                font-size: large;
-                background-image: url(two.jpg);
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment :fixed;
-
-            }
-            td {
-                text-align: center;
-            }
-            tr {
-                height: 100px;
-            }
-            h3 {
-                text-align: center;
-            }
-
-        </style>
-  <title>Manage Courier</title>
+    </style>
 </head>
 <body>
 
-
-  
-
-
-
-
     <?php
-      include ('connection.php');
+        include('connection.php');
+        include('navBar.php');
 
       $sql = "select * from courier";
 
@@ -78,21 +35,21 @@
 
 
 
-      <div>
+<div class="dashboard_table">
+              <h1 style="color:black">Courier Detail</h1>
+              <table>
+                  <tr>
+                      <th >Id</th>
+                      <th >name</th>
+                      <th >status</th>
+                      <th >Password</th>
+                      <th >contact</th>
+                      <th>Address</th> 
+                      <th>Deletion</th>
+                      <th>Updation</th>
+                  </tr>
 
-            <h3>Manage_courier</h3>
-
-            <table>
-
-
-                <tr id="head_1">
-
-                    <th>id</th>
-                    <th>name</th>
-                    <th>Status</th>
-                    <th>password</th>
-                    <th>Contact</th>
-                </tr>
+ 
 
                 <?php
                 
@@ -103,12 +60,19 @@
 
 
                         <tr> 
-                        <td>$row[c_id]</td>
-                        <td>$row[name]</td>
-                        <td>$row[status]</td>
-                        <td>$row[PASSWORD]</td>
-                        <td>$row[contact]</td>
-                        
+                            <td>$row[c_id]</td>
+                            <td>$row[name]</td>
+                            <td>$row[status]</td>
+                            <td>$row[PASSWORD]</td>
+                            <td>$row[contact]</td>
+                            <td>$row[address]</td>
+
+                            <td>
+                                <a href='delete_courier.php?c_id=$row[c_id]'>Delete</a>
+                            </td>
+                            <td>
+                                <a href='update_courier.php?c_id=$row[c_id]&name=$row[name]&status=$row[status]&PASSWORD=$row[PASSWORD]&contact=$row[contact]&address='>update<a>
+                            </td>
                         </tr>
                         
                         ";
@@ -120,9 +84,15 @@
 
             </table>
         </div>
+
+
         <?php
              $connect->close(); 
         ?>
     
 </body>
 </html>
+
+<?php
+    include('footer.php');
+?>

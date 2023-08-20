@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="./Css/footer.css" />
     <footer>
       <div class="footer-content">
-        <h1>Company name</h1>
+        <h1 style="color:white;">Company name</h1>
         <p>
           <b>company name</b>
           456 Park Avenue,

@@ -9,7 +9,7 @@ nav {
   height:auto;
   display:inline-block;
   background:black;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 nav ul {
@@ -49,6 +49,8 @@ nav ul li ul li {
 nav ul li:hover ul {
   display:block;
 }
+  
+
 nav button {
 
   width: 120px;

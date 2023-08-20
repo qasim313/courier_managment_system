@@ -2,11 +2,7 @@
 <head>
     <title>Dashboard</title>
 </head>
-<link rel="stylesheet" href="./css/NavStyle.css" />
 <link rel="stylesheet" href="./css/TableStyle.css" />
-
-
-
     <style>
 
       .container {
@@ -33,7 +29,7 @@
       
       .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      }
+      } 
       
     </style>
 <body >
@@ -70,18 +66,16 @@
               </div>
           </div>
           <div class="dashboard_table">
-              <h1>Recent Dileveries</h1>
+              <h1 style="color:black">Shippments</h1>
               <table>
                   <tr>
-                      <th>Shippment ID</th>
-                      <th>Customer Name</th>
-                      <th>Customer Phone</th>
-                      <th>Customer Address</th>
-                      <th>Shippment Status</th>
-                      <th>Shippment Date</th>
-                      <th>Delivery Date</th>
-                      <th>Delivery Status</th>
-                      
+                      <th style="background:black;">Id</th>
+                      <th style="background:black;">delivery Status</th>
+                      <th style="background:black;">delievery Date</th>
+                      <th style="background:black;">Contect</th>
+                      <th style="background:black;">Delivery Location</th>
+                      <th style="background:black;">Courier id</th>
+                      <th style="background:black;">Courier Name</th> 
                   </tr>
                   
               </table>
