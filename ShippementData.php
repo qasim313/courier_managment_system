@@ -16,7 +16,7 @@
     $r_name = $_REQUEST['r-name'];
     $r_contact = $_REQUEST['r-contact'];
     $r_address = $_REQUEST['r-address'];
-    $payment = $_REQUEST['payMethod'];
+    $status = $_REQUEST['status'];
 
     $sql = "select m_id from manager";
     $stmt = $connect->query($sql);
@@ -41,13 +41,13 @@
 
 
     
-    $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id)
-            values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id')";
+    $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id , status)
+            values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id' , '$status')";
 
     $connect->query($sql2);
 
-    $sql3 = "insert into customer(name,phone,address)
-            values('$r_name','$r_contact','$r_address')";
+    $sql3 = "insert into customer(name,phone,address ,s_id )
+            values('$r_name','$r_contact','$r_address' , '$s_id')";
    
     $connect->query($sql3);
 
