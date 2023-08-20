@@ -44,10 +44,7 @@
                 </select>
 
                 <label for="">Shippment status:</label>
-                <select name="payMethod" id="payMethod">
-                  <option value="active">active</option>
-                  <option value="inactive">inactive</option>
-                </select>
+                <input type="text" name="status" value="not delivered" readonly>
 
                 
   
@@ -73,7 +70,7 @@
 
                 <label for="">Payment status</label>
 
-                <select name="payMethod" id="payMethod">
+                <select name="payment" id="payment">
                   <option value="received">received</option>
                   <option value="not received">not received</option>
                 </select>
