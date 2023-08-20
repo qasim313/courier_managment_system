@@ -77,7 +77,7 @@ tr:nth-child(even) {
             <td>'.$row["address"].'</td>
             <td>'.$row["contact"].'</td>
             <td>'.$row["m_id"].'</td>
-            <td><a href="courier_assigned.php?c_id='.$row["c_id"].'&sh_id='.$_GET['sh_id'].'">Assign</a></td>
+            <td><a href="courier_assigned.php?c_id='.$row["c_id"].'&sh_id='.$_GET['sh_id'].'.&m_id='.$row['m_id'].'">Assign</a></td>
             </tr>';
         }
         echo '
