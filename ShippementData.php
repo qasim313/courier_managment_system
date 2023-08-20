@@ -24,7 +24,7 @@
     $connect->query($sql);
 
     $sql1 = "insert into shipper(name,address,contact)
-            values('$s_name','$s_address','$s_ph')";
+            values('$s_name','$s_address','$s_phone')";
    
     $connect->query($sql1);
 
@@ -32,6 +32,41 @@
             values('$r_name','$r_contact','$r_address')";
    
     $connect->query($sql2);
+
+    $amount = 200;
+    //this will be the standard price for all deliveries less than or equal to 5kg(weight)
+
+    if($sh_weight > 5){
+        $amount = $amount + ($sh_weight - 5)*50;
+    }//add 50RS per kg for weights more than 100
+
+    //we will add tax on the basis of location
+
+    $tax = 0.0;
+    if($category == "Document shipments"){
+        $tax = 0.13;
+    }
+    else if($category === "Package shipments"){
+        $tax = 0.18;
+    }
+    else if($category == "Fragile shipments"){
+        $tax = 0.23;
+    }else if($category == "Express shipments"){
+        $tax = 0.28;
+    }elseif ($category == "High Value shipments") {
+        $tax = 0.33;
+    }
+
+
+    $taxAmount = $amount*$tax;
+    $totalAmount = $amount + $taxAmount;
+
+
+    $sql3 = "insert into payment(amount,tax,total)
+            values('$amount','$taxAmount','$totalAmount')";
+
+    $connect->query($sql3);
+
 
     echo "
             <center>

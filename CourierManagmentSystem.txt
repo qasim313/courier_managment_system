@@ -39,10 +39,11 @@ address text
 
 );
 create TABLE payment (
-p_id int primary key auto_increment,
-    tax numeric ,
-    total numeric ,
-     issue_date timestamp 
+    p_id int primary key auto_increment,
+    amount decimal(10,3),
+    tax decimal(10,2) ,
+    total decimal(10,3) ,
+    issue_date timestamp 
 )auto_increment=2023080001;
 
 CREATE TABLE pay (

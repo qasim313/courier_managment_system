@@ -29,16 +29,21 @@
                 <input type="text" name="s-address" id="">
   
                 <label for="">Shippment id:</label>
-                <input type="text" name="sh-id" id="" disabled>
+                <input type="text" name="sh-id" id="" placeholder="auto-generated" disabled>
 
                 <label for="">shippment Weight:</label>
                 <input type="text" name="sh-weight" id="">
 
                 <label for="">Category:</label>
-                <input type="text" name="type" id="">
+                <select name="type" id="payMethod">
+                  <option value="Document shipments">Document shipments</option>
+                  <option value="Package shipments">Package shipments</option>
+                  <option value="Fragile shipments">Fragile shipments</option>
+                  <option value="Express shipments">Express shipments</option>
+                  <option value="High Value shipments">High Value shipments</option>
+                </select>
 
                 <label for="">Shippment status:</label>
-
                 <select name="payMethod" id="payMethod">
                   <option value="active">active</option>
                   <option value="inactive">inactive</option>
