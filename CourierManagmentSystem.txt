@@ -6,14 +6,14 @@ weight numeric not null ,
 category varchar(50) not null, 
 issue_date date not null ,
 delievery_date date not null
- )auto_increment=2000;
+ )auto_increment=20000;
 
 create table shipper (
-s_id int primary key,
+s_id int primary key auto_increment,
 name varchar(30) not null,
 address text,
 contact varchar(11)
-);
+)auto_increment=21000;
 
 
 create table courier(
@@ -22,7 +22,7 @@ name varchar(30) ,
 status  text , 
 PASSWORD text not null , 
 address text, 
-contact varchar(11) )auto_increment=22001;
+contact varchar(11) )auto_increment=22000;
 
 create table manager(
 	m_id int primary key,
