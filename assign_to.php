@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="./css/FormStyling.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/NavStyle.css" />
+    <link rel="stylesheet" href="./css/TableStyle.css" />
   <style> 
-    .table-content {
+    /* .table-content {
     padding: 20px;
         margin: 20px;
         background-color: #fff;
@@ -28,7 +29,7 @@ th, td {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
-}
+} */
 </style>
 
 
