@@ -6,30 +6,30 @@ weight numeric not null ,
 category varchar(50) not null, 
 issue_date date not null ,
 delievery_date date not null
- );
+ )auto_increment=2000;
 
 create table shipper (
-s_id int primary key,
+s_id int primary key auto_increment,
 name varchar(30) not null,
 address text,
 contact int(11)
-);
+)auto_increment=33001;
 
 
 create table courier(
-c_id int primary key,
+c_id int primary key auto_increment,
 name varchar(30) , 
 status  text , 
 PASSWORD text not null , 
 address text, 
-contact int(11) );
+contact int(11) )auto_increment=22001;
 
 create table manager(
-	m_id int primary key,
+	m_id int primary key auto_increment,
     name varchar(30) NOT null,
     password text not null , 
     contact int(11) 
-);
+)auto_increment=33001;
 
 
 create table customer (
@@ -39,11 +39,11 @@ address text
 
 );
 create TABLE payment (
-p_id int primary key,
+p_id int primary key auto_increment,
     tax numeric ,
     total numeric ,
      issue_date timestamp 
-);
+)auto_increment=2023080001;
 
 CREATE TABLE pay (
 s_id int , FOREIGN key (s_id) REFERENCES shipper(s_id) ,

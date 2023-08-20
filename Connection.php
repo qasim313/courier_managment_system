@@ -1,3 +1,3 @@
 <?php
-    $connect = mysqli_connect ("localhost", "root" , "" , "couriersystem");
+    $connect = mysqli_connect("localhost", "root" , "" , "couriersystem");
 ?>

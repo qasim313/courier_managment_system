@@ -29,7 +29,7 @@
                 <input type="text" name="s-address" id="">
   
                 <label for="">Shippment id:</label>
-                <input type="text" name="sh-id" id="">
+                <input type="text" name="sh-id" id="" disabled>
 
                 <label for="">shippment Weight:</label>
                 <input type="text" name="sh-weight" id="">
@@ -50,24 +50,21 @@
               <div class="right-data">
 
                 <label for="">Place Date:</label>
-                <input type="date" name="fdate" id="">
+                <input type="date" name="p-date" id="">
 
                 <label for="">Delivery Date:</label>
-                <input type="date" name="ddate" id="">
+                <input type="date" name="d-date" id="">
                 
   
 
                 <label for="">Receiver Name:</label>
                 <input type="text" name="r-name">
   
-                <label for="">Receiver contect:</label>
-                <input type="tel" name="r-id" id="">
-
-                <label for="">Receiver Email:</label>
-                <input type="email" name="mail" id="">
+                <label for="">Receiver contact:</label>
+                <input type="tel" name="r-contact" id="">
   
                 <label for="">Receiver Address:</label>
-                <input type="text" name="r-location" id="">
+                <input type="text" name="r-address" id="">
 
                 <label for="">Payment status</label>
 
