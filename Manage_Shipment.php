@@ -6,7 +6,12 @@
     <title>Manage Shipment</title>
     <link rel="stylesheet" href="./css/NavStyle.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/TableStyle.css" />
     <style>
+      th{ 
+        padding: 10px 10px;
+      }
+
         body {
             padding: 0px;
             margin: 0px;
@@ -25,33 +30,23 @@
           justify-content: space-around;
           height: auto;
           flex-direction: column;
-          padding: 120px 0px;
+          padding: 40px 0px;
           
          
         }
 
-  .table-content {
-    padding: 20px;
-        margin: 20px;
-        background-color: #fff;
-        border-radius: 15px;
-  }
-  table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th {
-  background-color: #04AA6D;
-  color: white;
-}
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+        td a {
+            text-decoration :none;
+            color:black;
+            font-size:larger;
+            font-weight:bold; 
+        }
+        tr th {
+            text-transform :uppercase;
+        }
+        tr td {
+            font-weight:bold; 
+        }
 
   h3 {
     font-size: 26px;
@@ -59,6 +54,7 @@ tr:nth-child(even) {
   letter-spacing: 1.4px;
   font-weight: 900;
   align-self: center;
+
   }
   .manage {
     text-decoration: none;
@@ -117,15 +113,11 @@ tr:nth-child(even) {
                 <td>'.$s_id.'</td>
                 <td>'.$c_id.'</td>
                 <td  class="btn-instance">
-                  <!-- <a href=""  class="manage">update</a> 
-                  <a href=""  class="manage">Delete</a> -->
-                  <input type="button" value="Update" class="manage" name="update">
-                  <input type="button" value="Delete" class="manage" name="delete" >
-
+                <a href="updateShipment.php?sh_id='.$row['sh_id'].'&weight='.$row['weight'].'&category='.$row['category'].'&issue_date='.$row['issue_date'].'&delievery_date='.$row['delievery_date'].'&m_id='.$row['m_id'].'&s_id='.$row['s_id'].'&c_id='.$row['c_id'].'">Update</a>
+                <a href="deleteShipment.php?sh_id='.$row['sh_id'].'">Delete</a>
                 </td>
             </tr>';
     }
-
         echo "</table>";
 
   }
