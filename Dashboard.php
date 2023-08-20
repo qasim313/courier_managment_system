@@ -27,7 +27,7 @@
           border-radius: 5px;
           margin: 10px;
           height: 20vh;
-          color: #37bc9b;
+          /* color: #37bc9b; */
 
       }
       
@@ -41,7 +41,7 @@
  <?php
   include ("connection.php");
   include ("navBar.php")
-?> 
+  ?> 
 
       <main> 
           <div class="container">

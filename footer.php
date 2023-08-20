@@ -12,19 +12,19 @@
         </p>
         <div class="footer-icon">
           <a href="#">
-            <img src="pic/facebook.png" alt="" />
+            <img src="assets/facebook.png" alt="" />
           </a>
           <a href="#">
-            <img src="pic/telegram.png" alt="" />
+            <img src="assets/telegram.png" alt="" />
           </a>
           <a href="#">
-            <img src="pic/instagram.png" alt="" />
+            <img src="assets/instagram.png" alt="" />
           </a>
           <a href="#">
-            <img src="pic/linkedin.png" alt="" />
+            <img src="assets/linkedin.png" alt="" />
           </a>
           <a href="#">
-            <img src="pic/youtube.png" alt="" />
+            <img src="assets/youtube.png" alt="" />
           </a>
         </div>
       </div>

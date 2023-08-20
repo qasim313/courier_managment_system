@@ -26,3 +26,6 @@ footer {
   font-size: 40px;
   font-weight: bolder;
 }
+footer h1 {
+  color: white;
+}

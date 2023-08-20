@@ -14,7 +14,7 @@ table {
   
 }
 th {
-  background-color:  #37bc9b;
+  background-color:  black;
   color: white;
 }
 th, td {
@@ -27,5 +27,6 @@ tr:nth-child(even) {
 }
 h1 {
     text-align: center;
-    color:  #37bc9b;
+    /* color:  #37bc; */
+    color: black;
 }

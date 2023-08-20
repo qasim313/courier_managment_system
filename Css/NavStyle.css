@@ -1,6 +1,6 @@
 body{ 
   margin:0; 
-  font-family:'tahoma'
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 nav {
@@ -8,7 +8,7 @@ nav {
   width:100%;
   height:auto;
   display:inline-block;
-  background:#37bc9b;
+  background:black;
   margin-bottom: 50px;
 }
 
@@ -35,7 +35,9 @@ nav ul li ul {
   display:none;
   position:absolute;
   left:0;
-  background:#37bc9b;
+  /* background:#37bc9b; */
+  /* background: cornflowerblue ;*/
+  background: black;
 }
 
 nav ul li ul li {
@@ -64,6 +66,8 @@ nav button {
   
 }
 nav button a {
-  color: #37bc9b;
+  /* color: #37bc9b; */
+  /* color: cornflowerblue; */
+  color: black;
   text-decoration: none;
 }
