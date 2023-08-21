@@ -1,5 +1,6 @@
 
 <?php   
+ include 'CheckifLogin.php';
     include 'connection.php';
     
     $sh_id = $_GET['sh_id'];    

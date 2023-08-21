@@ -1,4 +1,5 @@
 <?php
+ include 'CheckifLogin.php';
     include('connection.php');
 
     $id = $_GET['c_id'];

@@ -39,6 +39,7 @@
 <body >
 
  <?php
+  include 'CheckifLogin.php';
   include ("connection.php");
   include ("navBar.php");
   

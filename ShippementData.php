@@ -1,5 +1,5 @@
 <?php
-    
+    include 'CheckifLogin.php';
     include ('connection.php');
 
     $sh_weight = $_REQUEST['sh-weight'];

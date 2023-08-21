@@ -1,6 +1,6 @@
 
 <?php
-
+ include 'CheckifLogin.php';
     include("connection.php");
 
     if (isset($_POST['sh_id']) && isset($_POST['new_status'])) {

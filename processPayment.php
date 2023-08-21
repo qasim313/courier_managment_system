@@ -1,5 +1,5 @@
 <?php
-        
+         include 'CheckifLogin.php';
     if (isset($_POST['sh_weight']) && isset($_POST['category'])) {
       $sh_weight = $_POST['sh_weight'];
       $category = $_POST['category'];

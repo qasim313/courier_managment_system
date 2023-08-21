@@ -9,6 +9,8 @@
   </head>
   <body>
   <?php
+    include 'CheckifLogin.php';
+
     include ("navBar.php");
   ?>
 

@@ -101,6 +101,7 @@
 </head>
 <body>
     <?php   
+        include 'CheckifLogin.php';
         include ("connection.php");
         if (isset($_GET['value'])) {
             $receivedValue = $_GET['value'];

@@ -86,7 +86,7 @@
 
 
       <?php
-      
+       include 'CheckifLogin.php';
       if(isset($_POST['submit'])){
         $area = $_REQUEST['area'];
   

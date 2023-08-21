@@ -68,6 +68,7 @@
 <body>
 
 <?php
+ include 'CheckifLogin.php';
   include ("navBar.php");
   include ("connection.php");
   //sh_id	weight	category	issue_date	delievery_date	m_id	s_id	c_id

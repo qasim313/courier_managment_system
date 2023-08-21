@@ -1,3 +1,4 @@
+<?php include 'CheckifLogin.php';?>
 <!DOCTYPE html>
 <html>
 <head>
