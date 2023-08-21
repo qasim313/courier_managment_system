@@ -131,7 +131,7 @@
                 <th>Update Status</th> 
             </tr>
             <?php
-            $sql = "select * from shipment natural join shipper where c_id='$receivedValue'";
+            $sql = "select * from courier join assign using(c_id) join shipment using(sh_id) join shipper using(s_id) WHERE shipment.c_id = $receivedValue";
             $result = $connect->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo "
