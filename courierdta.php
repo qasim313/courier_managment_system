@@ -11,9 +11,15 @@
     $status = $_REQUEST['status'];
 
 
-    $sql = "INSERT INTO `courier`(c_id ,  `name`, `status`, `PASSWORD`, `address`, `contact`) VALUES ('$c_id' , '$c_name' , '$status' , '$pass' , '$c_location', '$c_contact' )";
+    $sql = "select m_id from manager";
+    $stmt = $connect->query($sql);
 
-    $connect->query($sql);
+    $result = $stmt->FETCH_ASSOC();
+    $m_id = $result['m_id'];
+
+    $sql1 = "INSERT INTO `courier`(`name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) VALUES ('$c_name','$status','$pass','$c_location','$c_contact','$m_id')";
+
+    $connect->query($sql1);
 
    
 

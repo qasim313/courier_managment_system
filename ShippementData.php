@@ -14,7 +14,7 @@
     $r_name = $_REQUEST['r-name'];
     $r_contact = $_REQUEST['r-contact'];
     $r_address = $_REQUEST['r-address'];
-    $payment = $_REQUEST['payMethod'];
+    $status = $_REQUEST['status'];
 
     $sql = "select m_id from manager";
     $stmt = $connect->query($sql);
@@ -39,13 +39,13 @@
 
 
     
-    $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id)
-            values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id')";
+    $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id , status)
+            values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id' , '$status')";
 
     $connect->query($sql2);
 
-    $sql3 = "insert into customer(name,phone,address)
-            values('$r_name','$r_contact','$r_address')";
+    $sql3 = "insert into customer(name,phone,address ,s_id )
+            values('$r_name','$r_contact','$r_address' , '$s_id')";
    
     $connect->query($sql3);
     
@@ -82,7 +82,11 @@
     $sql4 = "insert into payment(amount,tax,total,m_id)
             values('$amount','$taxAmount','$totalAmount','$m_id')";
 
+            $connect->query($sql4);
+
     $sql5 = "select p_id from payment order by issue_date desc";
+
+
 
     $result2 = $connect->query($sql5);
 
@@ -90,10 +94,17 @@
 
     $p_id = $row2['p_id'];
 
-    echo "<br>".$p_id;
 
-    $connect->query($sql4);
+    
 
+    $sql6  = "select sh_id from shipment where $s_id=s_id";
+    $result3 = $connect->query($sql6);
+    $row3= $result3->fetch_assoc();
+    $sh_id=$row3["sh_id"];
+
+    $sql7 = "insert into pay(s_id,sh_id,p_id) values('$s_id','$sh_id','$p_id')";
+
+    $result3 = $connect->query($sql7);
 
     echo "
             <center>

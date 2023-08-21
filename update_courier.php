@@ -65,8 +65,10 @@
             $result =$connect->query($sql);
             if ($result) {
                 echo "yes";
+                echo "<script>location.href='courier.php'</script>";
             } else {
                 echo "no";
+                echo "<script>location.href='courier.php'</script>";
             }
         }
 

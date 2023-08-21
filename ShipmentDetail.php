@@ -117,10 +117,7 @@
                 </select>
 
                 <label for="">Shippment status:</label>
-                <select name="payMethod" id="payMethod">
-                  <option value="active">active</option>
-                  <option value="inactive">inactive</option>
-                </select>
+                <input type="text" name="status" value="not delivered" readonly>
 
   
               </div>
@@ -150,8 +147,26 @@
                     <option value="received">received</option>   
                   </select>                
                 
+
               </div>
                   
+  
+
+                <label for="">Receiver Name:</label>
+                <input type="text" name="r-name">
+  
+                <label for="">Receiver contact:</label>
+                <input type="tel" name="r-contact" id="">
+  
+                <label for="">Receiver Address:</label>
+                <input type="text" name="r-address" id="">
+
+                <label for="">Payment status</label>
+
+                <select name="payment" id="payment">
+                  <option value="received">received</option>
+                  <option value="not received">not received</option>
+                </select>
             </div>
             
         <div class="total" id="total">
