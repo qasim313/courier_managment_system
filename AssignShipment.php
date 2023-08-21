@@ -90,7 +90,7 @@
       if(isset($_POST['submit'])){
         $area = $_REQUEST['area'];
   
-        $sql = "select DISTINCT shipper.s_id , customer.address , customer.phone , customer.name , shipment.sh_id , shipment.weight , shipment.category , shipment.status  from shipper join customer USING (s_id) join shipment USING (s_id) join assign on shipment.sh_id != assign.sh_id where customer.address like '$area' and shipment.status like 'not%' ";
+        $sql = "select  shipper.s_id , customer.address , customer.phone , customer.name , shipment.sh_id , shipment.weight , shipment.category , shipment.status  from shipper join customer USING (s_id) join shipment USING (s_id) where shipment.sh_id not in (SELECT sh_id from assign) and customer.address like '$area' and shipment.status like 'not%' ";
 
         // var_dump($sql);
   
@@ -102,7 +102,7 @@
         echo "
         <div class='dashboard_table'>
         <div class='table-content'>
-            <h3>Manage Shipment</h3>
+            
             <table>
             <tr>
                 <th>Shipper ID</th>
@@ -132,7 +132,7 @@
                 <td>$row[weight]</td>
                 <td>$row[status]</td>
                 <td>$row[category]</td>
-                <td> <a href='assign_to.php?sh_id=$row[sh_id]'>Assign to</a></td>
+                <td> <a href='assign_to.php?sh_id=$row[sh_id]&area=$area'>Assign to</a></td>
                 
                 </tr>
 

@@ -4,18 +4,7 @@
     <title>Manage Courier</title>
     <link rel="stylesheet" href="./css/TableStyle.css" />
     <style> 
-        td a {
-            text-decoration :none;
-            color:black;
-            font-size:larger;
-            font-weight:bold; 
-        }
-        tr th {
-            text-transform :uppercase;
-        }
-        tr td {
-            font-weight:bold; 
-        }
+        
 
     </style>
 </head>

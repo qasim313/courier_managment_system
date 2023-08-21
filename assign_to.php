@@ -4,6 +4,7 @@
   include('navBar.php');
 
   $sh_id = $_GET['sh_id'];
+  $area = $_GET['area'];
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +20,14 @@
 
 
   <?php
-    $sql = "select * from courier where status like 'inactive'";
-
+    $sql = "SELECT * from courier WHERE c_id in (select DISTINCT courier.c_id  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '$area')  ";
 
     $result = $connect->query($sql);
+
+    if ($result->num_rows <= 0) {
+      $sql ="select * from courier where c_id not in ( SELECT c_id FROM courier NATURAL JOIN assign)";
+      $result = $connect->query($sql);
+    }
 
   ?>
 
@@ -35,9 +40,8 @@
                       <th >status</th>
                       <th >Password</th>
                       <th >contact</th>
-                      <th>Address</th> 
-                      <th>Assignment</th>
-                      
+                      <th> Address</th> 
+                      <th>Assignment</th>    
                   </tr>
 
  
