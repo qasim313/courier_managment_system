@@ -1,13 +1,14 @@
 <?php
     session_start();
     include ('connection.php');
-
+    echo "login";
 
     $id = $_REQUEST['id'];
     $pass = $_REQUEST['password'];
     $sql = "select name from courier where password = $pass and c_id = '$id'";
     $result = mysqli_query($connect, $sql);
     if($result && $result->num_rows == 1){
+        
         $row = mysqli_fetch_assoc($result);
         $_SESSION['authenticated'] = true;
         header("Location: courier_view.php?value=$id"); 

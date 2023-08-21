@@ -1,13 +1,16 @@
 <?php
 
 
-    if(isset($_GET['value']) && !empty($_GET['value']) && $_GET['value'] ){
-        echo"logout";
-        $_SESSION['authenticated'] = false;
-        session_destroy();
-        header("Location: login.html"); 
-        exit();
-    }else{
+    // if(isset($_GET['value']) && !empty($_GET['value']) && $_GET['value'] ){
+    //     echo"logout";
+    //     $_SESSION['authenticated'] = false;
+    //     session_start();
+    //     session_unset();
+    //     session_destroy();
+    //     header("Location: login.html"); 
+    //     exit();
+    // }
+    // else{
 
         session_start();
   
@@ -15,6 +18,6 @@
             header("Location: login.html"); // Redirect to the login page
             exit();
         }
-    }
+    // }
 
 ?>

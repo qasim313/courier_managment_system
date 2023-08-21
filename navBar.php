@@ -20,5 +20,5 @@
               </ul>
           </li>
         </ul>
-        <button><a href="CheckifLogin.php?value=true">Logout</a></button>
+        <button><a href="logout.php">Logout</a></button>
       </nav>
