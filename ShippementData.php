@@ -83,7 +83,11 @@
     $sql4 = "insert into payment(amount,tax,total,m_id)
             values('$amount','$taxAmount','$totalAmount','$m_id')";
 
+            $connect->query($sql4);
+
     $sql5 = "select p_id from payment order by issue_date desc";
+
+
 
     $result2 = $connect->query($sql5);
 
@@ -91,10 +95,17 @@
 
     $p_id = $row2['p_id'];
 
-    echo "<br>".$p_id;
 
-    $connect->query($sql4);
+    
 
+    $sql6  = "select sh_id from shipment where $s_id=s_id";
+    $result3 = $connect->query($sql6);
+    $row3= $result3->fetch_assoc();
+    $sh_id=$row3["sh_id"];
+
+    $sql7 = "insert into pay(s_id,sh_id,p_id) values('$s_id','$sh_id','$p_id')";
+
+    $result3 = $connect->query($sql7);
 
     echo "
             <center>

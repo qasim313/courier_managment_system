@@ -80,7 +80,7 @@ tr:nth-child(even) {
             <td>'.$m_id.'</td>
             <td>'.$s_id.'</td>
             <td>'.$c_id.'</td>
-            <td><a href="assign_to.php?sh_id=$row[sh_id]" style="width: 100%; border: 2px solid black; border-radius: 10px; padding: 2px; background: black; color: white; cursor: pointer;">Assigned To</a></td>
+            <td><a href="assign_to.php?sh_id=$row[sh_id]" style="width: 100%; border: 2px solid black; border-radius: 10px; padding: 2px; background: black; color: white; cursor: pointer;">Assign To</a></td>
         </tr>';
     }
       
