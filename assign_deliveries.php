@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     include('connection.php');
     include('navBar.php');
   
@@ -84,4 +84,4 @@
     
            
           
-        
+         -->

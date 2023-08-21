@@ -19,7 +19,7 @@
 
 
   <?php
-    $sql = "select * from courier where status like 'inactive' ";
+    $sql = "select * from courier where status like 'inactive'";
 
 
     $result = $connect->query($sql);

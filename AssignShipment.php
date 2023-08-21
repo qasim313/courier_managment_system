@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/TableStyle.css" />
 
     
 
@@ -65,7 +66,7 @@
 
   <div class="box">
       <h2>Select Area</h2>
-      <form action="assign_deliveries.php" method="post">
+      <form  method="post">
 
       <select name="area" id="" value="Select Area">
         <option value="Wapda Town">Wapda Town</option>
@@ -82,6 +83,73 @@
       <input type="submit" value="Enter" name="submit">
 
       </form>
+
+
+      <?php
+      
+      if(isset($_POST['submit'])){
+        $area = $_REQUEST['area'];
+  
+        $sql = "select DISTINCT shipper.s_id , customer.address , customer.phone , customer.name , shipment.sh_id , shipment.weight , shipment.category , shipment.status  from shipper join customer USING (s_id) join shipment USING (s_id) join assign on shipment.sh_id != assign.sh_id where customer.address like '$area' and shipment.status like 'not%' ";
+
+        // var_dump($sql);
+  
+        
+  
+        $result = $connect->query($sql);
+
+
+        echo "
+        <div class='dashboard_table'>
+        <div class='table-content'>
+            <h3>Manage Shipment</h3>
+            <table>
+            <tr>
+                <th>Shipper ID</th>
+                <th>Delivery Location</th>
+                <th>Contact</th>
+                <th>Customer Name</th>
+                <th>Shipment ID</th>
+                <th>Supplier weight</th>
+                <th>Delivery status</th>
+                <th>Category</th>
+                <th>Assign</th>
+            </tr> ";
+        
+      
+
+          
+            while($row=$result->fetch_assoc()){
+
+        
+              echo "
+                <tr>
+                <td>$row[s_id]</td>
+                <td>$row[address]</td>
+                <td>$row[phone]</td>
+                <td>$row[name]</td>
+                <td>$row[sh_id]</td>
+                <td>$row[weight]</td>
+                <td>$row[status]</td>
+                <td>$row[category]</td>
+                <td> <a href='assign_to.php?sh_id=$row[sh_id]'>Assign to</a></td>
+                
+                </tr>
+
+              
+              ";
+            }
+
+          
+         
+          echo "
+          </div>
+          </div>
+          </table>";
+  
+      }
+      
+      ?>
   </div>
 
 

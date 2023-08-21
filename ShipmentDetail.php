@@ -226,12 +226,11 @@
 
     <script>
     
-        $(document).ready(function() {
+      $(document).ready(function() {
       $("#btn").click(function() {
         var shWeight = $("input[name='sh-weight']").val();
         var category = $("select[name='type']").val();
         
-       
           $.ajax({
             type: "POST",
             url: "processPayment.php",
