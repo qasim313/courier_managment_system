@@ -97,7 +97,8 @@
       $weight=$row['weight'];
       $category=$row['category'];
       $issue_date=$row['issue_date'];
-      $delievery_date=$row['delievery_date'];
+      $delievery_date=$row['delievery_date'];//get the status as well
+      $status=$row['status'];
       $m_id=$row['m_id'];
       $s_id=$row['s_id'];
       $c_id=$row['c_id'];
@@ -110,6 +111,7 @@
                 <td>'.$category.'</td>
                 <td>'.$issue_date.'</td>
                 <td>'.$delievery_date.'</td>
+                <td>'.$status.'</td>
                 <td>'.$m_id.'</td>
                 <td>'.$s_id.'</td>
                 <td>'.$c_id.'</td>
