@@ -28,8 +28,8 @@
                 <label for="">Shipper Address:</label>
                 <input type="text" name="s-address" id="">
   
-                <label for="">Shippment id:</label>
-                <input type="text" name="sh-id" id="" placeholder="auto-generated" disabled>
+                <label for="">Shipper id:</label>
+                <input type="text" name="s-id" id="">
 
                 <label for="">shippment Weight:</label>
                 <input type="text" name="sh-weight" id="">

@@ -12,26 +12,37 @@
     $s_name = $_REQUEST['s-name'];
     $s_address = $_REQUEST['s-address'];
     $s_phone = $_REQUEST['s-ph'];
+    $s_id = $_REQUEST['s-id'];
 
     $r_name = $_REQUEST['r-name'];
     $r_contact = $_REQUEST['r-contact'];
     $r_address = $_REQUEST['r-address'];
     $payment = $_REQUEST['payMethod'];
 
-    $sql = "insert into shipment(weight,category,issue_date,delievery_date)
-            values('$sh_weight','$category','$p_date','$d_date')";
-   
-    $connect->query($sql);
+    $sql = "select m_id from manager";
+    $stmt = $connect->query($sql);
 
-    $sql1 = "insert into shipper(name,address,contact)
-            values('$s_name','$s_address','$s_phone')";
-   
+    $result = $stmt->FETCH_ASSOC();
+    $m_id = $result['m_id'];
+
+    $sql1 = "insert into shipper(s_id,name,address,contact,m_id)
+            values('$s_id','$s_name','$s_address','$s_phone','$m_id')";
+
     $connect->query($sql1);
 
-    $sql2 = "insert into customer(name,phone,address)
-            values('$r_name','$r_contact','$r_address')";
+    $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id)
+            values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id')";
    
     $connect->query($sql2);
+
+    
+   
+    
+
+    $sql3 = "insert into customer(name,phone,address)
+            values('$r_name','$r_contact','$r_address')";
+   
+    $connect->query($sql3);
 
     $amount = 200;
     //this will be the standard price for all deliveries less than or equal to 5kg(weight)
@@ -62,10 +73,10 @@
     $totalAmount = $amount + $taxAmount;
 
 
-    $sql3 = "insert into payment(amount,tax,total)
-            values('$amount','$taxAmount','$totalAmount')";
+    $sql4 = "insert into payment(amount,tax,total,m_id)
+            values('$amount','$taxAmount','$totalAmount','$m_id')";
 
-    $connect->query($sql3);
+    $connect->query($sql4);
 
 
     echo "

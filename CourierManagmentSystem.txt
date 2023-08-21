@@ -9,11 +9,11 @@ delievery_date date not null
  )auto_increment=2000;
 
 create table shipper (
-s_id int primary key auto_increment,
+s_id int primary key,
 name varchar(30) not null,
 address text,
 contact varchar(11)
-)auto_increment=33001;
+);
 
 
 create table courier(
@@ -32,7 +32,7 @@ create table manager(
 );
 
 insert into manager(m_id,name,password,contact)
-values(33001,'Abdul Mateen',1122,'03122323432');
+values(1122,'Abdul Mateen','admin','03122323432');
 
 
 create table customer (
