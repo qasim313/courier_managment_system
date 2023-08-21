@@ -3,11 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/FormStyling.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/NavStyle.css" />
-
+    <!-- <link rel="stylesheet" href="./Css/FormStyling.css" /> -->
+    <link rel="stylesheet" href="./Css/footer.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Contact</title>
+    <style>
+      body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .item1-1 {
+      margin-top: 0;
+    }
+
+    .get-data {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .left-data, .right-data {
+      flex: 1;
+      padding: 10px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    select {
+      padding: 8px 4px; /* To align with input fields */
+    }
+
+    .total {
+      display:none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      margin:0 auto ;
+      border-radius: 4px;
+      cursor: pointer;
+      display:block;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn:hover {
+      background-color: #0056b3;
+    }
+
+    .calculatedTotal {
+      margin-top: 10px;
+      margin-left:10px;
+    }
+    </style>
   </head>
   <body>
   <?php
@@ -49,71 +122,79 @@
                   <option value="inactive">inactive</option>
                 </select>
 
-                
   
               </div>
-              <div class="right-data">
+                <div class="right-data">
 
-                <label for="">Place Date:</label>
-                <input type="date" name="p-date" id="">
+                  <label for="">Place Date:</label>
+                  <input type="date" name="p-date" id="">
 
-                <label for="">Delivery Date:</label>
-                <input type="date" name="d-date" id="">
+                  <label for="">Delivery Date:</label>
+                  <input type="date" name="d-date" id="">
+                  
+    
+
+                  <label for="">Receiver Name:</label>
+                  <input type="text" name="r-name">
+    
+                  <label for="">Receiver contact:</label>
+                  <input type="tel" name="r-contact" id="">
+    
+                  <label for="">Receiver Address:</label>
+                  <input type="text" name="r-address" id="">
+
+                  <label for="">Payment status</label>
+
+                  <select name="payMethod" id="payMethod">
+                    <option value="not received">not received</option>
+                    <option value="received">received</option>   
+                  </select>                
                 
-  
-
-                <label for="">Receiver Name:</label>
-                <input type="text" name="r-name">
-  
-                <label for="">Receiver contact:</label>
-                <input type="tel" name="r-contact" id="">
-  
-                <label for="">Receiver Address:</label>
-                <input type="text" name="r-address" id="">
-
-                <label for="">Payment status</label>
-
-                <select name="payMethod" id="payMethod">
-                  <option value="received">received</option>
-                  <option value="not received">not received</option>
-                </select>
+              </div>
+                  
             </div>
-
-              
-            </div>
-        <br />
-        <input type="submit" value="Submit" id="btn" />
+            
+        <div class="total" id="total">
+          <label class="calculatedTotal" for="payment_total">Calculated Payment:</label>
+                <label  for='txt'>
+                      <input style="width:80%" class="calculatedTotal" type="text"name="payment_total" id="payment_total" />
+                      $
+                  </label>
+                  <br>
+          
+        </div>
+        <input type="Button" value="Continue" id="btn" />
       </form>
     </div>
 
-    <footer>
-      <div class="footer-content">
-        <h1>company name</h1>
-        <p>
-          <b>company name</b>
-          456 Park Avenue,
-          Lahore, lhr,
-          Pakistan,
-          10001
-        </p>
-        <div class="footer-icon">
-          <a href="#">
-            <img src="pic/facebook.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="pic/telegram.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="pic/instagram.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="pic/linkedin.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="pic/youtube.png" alt="" />
-          </a>
-        </div>
-      </div>
-    </footer>
+    <script>
+    
+        $(document).ready(function() {
+      $("#btn").click(function() {
+        var shWeight = $("input[name='sh-weight']").val();
+        var category = $("select[name='type']").val();
+        
+       
+          $.ajax({
+            type: "POST",
+            url: "processPayment.php",
+            data: {
+              sh_weight: shWeight,
+              category: category
+            },
+            success: function(response) {
+              $("#total").css('display', 'block'); // Show the div
+              $("#payment_total").val(response); // Set the received value as the input value
+            }
+          });
+      
+      });
+    });
+    </script>
+
+  
+  <?php
+    include("footer.php");
+  ?>
   </body>
 </html>

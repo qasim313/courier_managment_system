@@ -1,6 +1,4 @@
 <?php
-
-
     
     include ('connection.php');
 
@@ -50,6 +48,7 @@
             values('$r_name','$r_contact','$r_address')";
    
     $connect->query($sql3);
+    
 
     $amount = 200;
     //this will be the standard price for all deliveries less than or equal to 5kg(weight)
@@ -164,6 +163,7 @@
             ";
 
 
+            insertData();
             $connect->close();
 
 ?>

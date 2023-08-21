@@ -38,14 +38,14 @@ body {
   font-weight: 900;
 }
 
-label {
+label:not([id="txt"]) {
   align-self: flex-start;
   padding: 10px 10px 10px 10px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-input {
+input:not([id="payment_total"]) {
   height: 37px;
   width: 83%;
   border: none;
@@ -131,6 +131,11 @@ h3 {
   padding: 20px;
   
 } 
+
+input,select{
+  background-color:#F5F5DC;
+  
+}
 
 /* .dashboard_table{
   display: flex;
