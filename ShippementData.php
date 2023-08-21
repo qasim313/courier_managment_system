@@ -25,7 +25,7 @@
     $sql1 = "insert into shipper(name,address,contact,m_id)
             values('$s_name','$s_address','$s_phone','$m_id')";
 
-    $connect->query($sql1);
+    $flag1 = $connect->query($sql1);
 
 
     $sql6 = "select s_id from shipper order by s_id desc";
@@ -42,12 +42,12 @@
     $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id , status)
             values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id' , '$status')";
 
-    $connect->query($sql2);
+    $flag2 =$connect->query($sql2);
 
     $sql3 = "insert into customer(name,phone,address ,s_id )
             values('$r_name','$r_contact','$r_address' , '$s_id')";
    
-    $connect->query($sql3);
+    $flag3 =$connect->query($sql3);
     
 
     $amount = 200;
@@ -82,7 +82,7 @@
     $sql4 = "insert into payment(amount,tax,total,m_id)
             values('$amount','$taxAmount','$totalAmount','$m_id')";
 
-            $connect->query($sql4);
+    $flag4 =$connect->query($sql4);
 
     $sql5 = "select p_id from payment order by issue_date desc";
 
@@ -175,6 +175,12 @@
 
     //         insertData();
             $connect->close();
+            if($flag1 && $flag1 && $flag2 && $flag3 && $flag4 && $result1 && $result2 && $result3 ){
+                echo"alert('Shipment Added Successfully!)";
+            }else{
+                echo"alert('Failed to Add Shipment!)";
+            }
+            
             header("Location: ShipmentDetail.php");
             exit();
 
