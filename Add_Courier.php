@@ -17,10 +17,10 @@
         <h3 class="item1-1">Courier Detail</h3>
 
         <label for="id">Courier id:</label>
-        <input type="text" name="id" id="id" class="item1-2" />
+        <input type="text" value="auto-generated" readonly="read" name="id" id="id"  class="item1-2"/>
         <label for="name">Courier Name:</label>
         <input type="text" name="name" id="name" class="item1-2" />
-        <label for="phone">Contect no:</label>
+        <label for="phone">Contact no:</label>
         <input type="tel" name="ph" id="ph" class="item1-2" />
         <label for="location">Address:</label>
         <input type="text" name="location" id="">
