@@ -36,7 +36,7 @@
 
  <?php
   include ("connection.php");
-  include ("navBar.php")
+  include ("navBar.php");
   ?> 
 
       <main> 
