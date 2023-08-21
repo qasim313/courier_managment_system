@@ -142,7 +142,7 @@
                 <input type="text" name="s-address" id="">
   
                 <label for="">Shipper id:</label>
-                <input type="text" name="s-id" id="">
+                <input style="opacity:0.5;font-weight: bold;" type="text" name="s-id" id="" value="auto generated" readonly="read">
 
                 <label for="">shippment Weight:</label>
                 <input type="text" name="sh-weight" id="">
@@ -178,7 +178,19 @@
                   <input type="tel" name="r-contact" id="">
     
                   <label for="">Receiver Address:</label>
-                  <input type="text" name="r-address" id="">
+                  <!-- <input type="text" name="r-address" id=""> -->
+                  
+                  <select name="r-address" id="" value="Select Area">
+                    <option value="Wapda Town">Wapda Town</option>
+                    <option value="Satellite Town">Satellite Town</option>
+                    <option value="Bagbanpura">Bagbanpura</option>
+                    <option value="Ghanta Ghar">Ghanta Ghar</option>
+                    <option value="Jinah Road">Jinah Road</option>
+                    <option value="Model Town">Model Town</option>
+                    <option value="Garden Town">Garden Town</option>
+                    <option value="Urdu Bazar">Urdu Bazar</option>
+                    <option value="People Colony">People Colony</option>
+                  </select>
 
                   <label for="">Payment status</label>
 
@@ -235,8 +247,10 @@
                       $("#actual_amount").text(values[0]);
                       $("#tax").text(values[1]);
                       $("#total_amount").text(values[2]);
+                      $("#btn").val("Place Order");
+                      $("#btn").css("background-color","green");
+                      $("#btn").attr("type", "submit");
                     }
-
           });
       
       });

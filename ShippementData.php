@@ -105,76 +105,78 @@
     $sql7 = "insert into pay(s_id,sh_id,p_id) values('$s_id','$sh_id','$p_id')";
 
     $result3 = $connect->query($sql7);
-
-    echo "
-            <center>
-            <h2> Shipper Detail </h2>
-                <table border='1' height='100px' width='50%' style=' border-spacing: 0 ; text-align: center; '  >
-                    <tr style='border: 5px solid black; background-color: goldenrod;'>
-                        <th>Shipper Name</th>
-                        <th>Shipper Number</th>
-                        <th>Shipper Address</th>
+    // echo "
+    //         <center>
+    //         <h2> Shipper Detail </h2>
+    //             <table border='1' height='100px' width='50%' style=' border-spacing: 0 ; text-align: center; '  >
+    //                 <tr style='border: 5px solid black; background-color: goldenrod;'>
+    //                     <th>Shipper Name</th>
+    //                     <th>Shipper Number</th>
+    //                     <th>Shipper Address</th>
                         
-                    </tr>
-                    <tr>
-                        <td>$s_name</td>
-                        <td>$s_phone</td>
-                        <td>$s_address</td>
+    //                 </tr>
+    //                 <tr>
+    //                     <td>$s_name</td>
+    //                     <td>$s_phone</td>
+    //                     <td>$s_address</td>
                         
-                    </tr>
-                </table>
-            </center>
-            <br>
-            <br>
-            ";
+    //                 </tr>
+    //             </table>
+    //         </center>
+    //         <br>
+    //         <br>
+    //         ";
 
 
-            echo "
-            <center>
+    //         echo "
+    //         <center>
 
-                <h2> Shippment Detail </h2>
-                <table border='1' height='100px' width='50%' style=' border-spacing: 0 ; text-align: center; '  >
-                    <tr style='border: 5px solid black; background-color: goldenrod;'>
-                        <th>Shippment Weight</th>
-                        <th>issue date</th>
-                        <th>delivery date</th>
-                    </tr>
-                    <tr>
-                        <td>$sh_weight</td> 
-                        <td>$p_date</td>
-                        <td>$d_date</td>
-                    </tr>
-                </table>
-            </center>
-            <br>
-            <br>
-            ";
+    //             <h2> Shippment Detail </h2>
+    //             <table border='1' height='100px' width='50%' style=' border-spacing: 0 ; text-align: center; '  >
+    //                 <tr style='border: 5px solid black; background-color: goldenrod;'>
+    //                     <th>Shippment Weight</th>
+    //                     <th>issue date</th>
+    //                     <th>delivery date</th>
+    //                 </tr>
+    //                 <tr>
+    //                     <td>$sh_weight</td> 
+    //                     <td>$p_date</td>
+    //                     <td>$d_date</td>
+    //                 </tr>
+    //             </table>
+    //         </center>
+    //         <br>
+    //         <br>
+    //         ";
 
 
-            echo "
-            <center>
-            <h2> Receiver Detail</h2>
-                <table border='1' height='100px' width='50%' style=' border-spacing: 0 ; text-align: center; '  >
-                    <tr style='border: 5px solid black; background-color: goldenrod;'>
-                        <th>Receiver Name</th>
-                        <th>Receiver id</th>
-                        <th>Receiver Location</th>
-                        <th>Payment Status</th>
+    //         echo "
+    //         <center>
+    //         <h2> Receiver Detail</h2>
+    //             <table border='1' height='100px' width='50%' style=' border-spacing: 0 ; text-align: center; '  >
+    //                 <tr style='border: 5px solid black; background-color: goldenrod;'>
+    //                     <th>Receiver Name</th>
+    //                     <th>Receiver id</th>
+    //                     <th>Receiver Location</th>
+    //                     <th>Payment Status</th>
                         
-                    </tr>
-                    <tr>
-                        <td>$r_name</td>
-                        <td>$r_contact</td>
-                        <td>$r_address</td>
-                        <td>$payment</td>
+    //                 </tr>
+    //                 <tr>
+    //                     <td>$r_name</td>
+    //                     <td>$r_contact</td>
+    //                     <td>$r_address</td>
+    //                     <td>$payment</td>
                         
-                    </tr>
-                </table>
-            </center>
-            ";
+    //                 </tr>
+    //             </table>
+    //         </center>
+    //         ";
 
 
-            insertData();
+    //         insertData();
             $connect->close();
+            header("Location: ShipmentDetail.php");
+            exit();
+
 
 ?>
