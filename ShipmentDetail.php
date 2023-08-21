@@ -50,16 +50,56 @@
       box-sizing: border-box;
     }
 
+    .total {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom:20px;
+    }
+
+    .total table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 15px;
+    }
+
+    .total th,
+    .total td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .total th {
+      background-color: #f2f2f2;
+    }
+
+    .total tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .total tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .total td.amount,
+    .total td.tax,
+    .total td.total {
+      font-weight: bold;
+    }
+
+    .operator {
+      font-size: 20px;
+      margin: 0 10px;
+    }
+
+
     select {
       padding: 8px 4px; /* To align with input fields */
     }
-
-    .total {
-      display:none;
-      text-align: center;
-      margin-top: 20px;
-    }
-
     #btn {
       padding: 10px 20px;
       background-color: #007bff;
@@ -149,35 +189,25 @@
                 
 
               </div>
-                  
-  
-
-                <label for="">Receiver Name:</label>
-                <input type="text" name="r-name">
-  
-                <label for="">Receiver contact:</label>
-                <input type="tel" name="r-contact" id="">
-  
-                <label for="">Receiver Address:</label>
-                <input type="text" name="r-address" id="">
-
-                <label for="">Payment status</label>
-
-                <select name="payment" id="payment">
-                  <option value="received">received</option>
-                  <option value="not received">not received</option>
-                </select>
             </div>
-            
-        <div class="total" id="total">
-          <label class="calculatedTotal" for="payment_total">Calculated Payment:</label>
-                <label  for='txt'>
-                      <input style="width:80%" class="calculatedTotal" type="text"name="payment_total" id="payment_total" />
-                      $
-                  </label>
-                  <br>
-          
-        </div>
+            <div class="total" id="total">
+              <table>
+                <tr>
+                  <th colspan="3">Calculated Payment</th>
+                </tr>
+                <tr>
+                  <th>Amount:</th>
+                  <th>Tax</th>
+                  <th>Total Amount</th>
+                </tr>
+                <tr>
+                  
+                  <td id="actual_amount"></td>
+                  <td id="tax"></td>                  
+                  <td id="total_amount"></td>
+                </tr>
+              </table>
+            </div>
         <input type="Button" value="Continue" id="btn" />
       </form>
     </div>
@@ -198,9 +228,15 @@
               category: category
             },
             success: function(response) {
-              $("#total").css('display', 'block'); // Show the div
-              $("#payment_total").val(response); // Set the received value as the input value
-            }
+                      $("#total").css('display', 'flex'); // Show the div
+                      var values = response.split("|"); // Split the response into array of values
+                      
+                      // Update the table cells with the calculated values
+                      $("#actual_amount").text(values[0]);
+                      $("#tax").text(values[1]);
+                      $("#total_amount").text(values[2]);
+                    }
+
           });
       
       });

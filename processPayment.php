@@ -34,7 +34,7 @@
         $taxAmount = $amount*$tax;
         $totalAmount = $amount + $taxAmount;
 
-      echo $totalAmount;
+        echo $amount . "|" . $taxAmount . "|" . $totalAmount;
       
     }
   ?>
