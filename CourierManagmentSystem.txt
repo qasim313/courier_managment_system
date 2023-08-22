@@ -63,25 +63,25 @@ description text
 
 alter table customer
 add  s_id int,
-add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete cascade;
+add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete set null;
 
 alter table payment 
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade;
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete set null;
 
 alter table courier 
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade;
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete set null;
 
 alter table shipper 
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade;
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete set null;
 
 
 alter table shipment
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade,
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete set null,
 add s_id int,
-add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete cascade,
+add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete set null,
 add c_id int,
-add FOREIGN key (c_id) REFERENCES courier (c_id) on delete cascade;
+add FOREIGN key (c_id) REFERENCES courier (c_id) on delete set null;

@@ -8,9 +8,9 @@
     $result =$connect->query($sql);
     if ($result) {
         echo "Deletion Sucessful";
-        echo "<script>location.href='courier.php'</script>";
+        echo "<script>location.href='Manage_Courier.php'</script>";
     } else {
         echo "Somethig Wrong";
-        echo "<script>location.href='courier.php'</script>";
+        echo "<script>location.href='Manage_Courier.php'</script>";
     }
 ?>
