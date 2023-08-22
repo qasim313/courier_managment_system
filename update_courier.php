@@ -1,6 +1,8 @@
 
 <?php
+    include('CheckIfLogin.php');
     include('connection.php');
+    include('navBar.php');
 
     $c_id = $_GET['c_id'];
     $c_name = $_GET['name'];
@@ -74,12 +76,9 @@
     
 </body>
 </html>
-        $sql = "update shipment set status = '$new_status' where sh_id = $sh_id";
-        $result=$connect->query($sql);
-        if($result)echo"status updated!";
-        else echo "failed to update status";
-    }
-    $connect->close();
+
+<?php
+    include('footer.php');
 ?>
 
 

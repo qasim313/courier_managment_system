@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/TableStyle.css" />
     <style>
-      th{ 
+      /* th{ 
         padding: 10px 10px;
       }
 
@@ -62,7 +62,17 @@
     font-weight: bolder;
     
   }
- 
+  */
+
+  h3 {
+    font-size: 26px;
+  /* text-transform: uppercase;
+  letter-spacing: 1.4px; */
+  font-weight: 900;
+  text-align: center;
+
+
+  }
   </style>
 </head>
 <body>
@@ -99,7 +109,7 @@
       $weight=$row['weight'];
       $category=$row['category'];
       $issue_date=$row['issue_date'];
-      $delievery_date=$row['delievery_date'];//get the status as well
+      $delievery_date=$row['delivery_date'];//get the status as well
       $status=$row['status'];
       $m_id=$row['m_id'];
       $s_id=$row['s_id'];
@@ -118,7 +128,7 @@
                 <td>'.$s_id.'</td>
                 <td>'.$c_id.'</td>
                 <td  class="btn-instance">
-                <a href="updateShipment.php?sh_id='.$row['sh_id'].'&weight='.$row['weight'].'&category='.$row['category'].'&issue_date='.$row['issue_date'].'&delievery_date='.$row['delievery_date'].'&m_id='.$row['m_id'].'&s_id='.$row['s_id'].'&c_id='.$row['c_id'].'&status='.$row['status'].'">Update</a>
+                <a href="updateShipment.php?sh_id='.$row['sh_id'].'&weight='.$row['weight'].'&category='.$row['category'].'&issue_date='.$row['issue_date'].'&delivery_date='.$row['delivery_date'].'&m_id='.$row['m_id'].'&s_id='.$row['s_id'].'&c_id='.$row['c_id'].'&status='.$row['status'].'">Update</a>
                 </td>
                 <td  class="btn-instance">
                 <a href="deleteShipment.php?sh_id='.$row['sh_id'].'">Delete</a>

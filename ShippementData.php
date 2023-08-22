@@ -41,7 +41,7 @@
 
 
     
-    $sql2 = "insert into shipment(weight,category,issue_date,delievery_date,m_id,s_id , status)
+    $sql2 = "insert into shipment(weight,category,issue_date,delivery_date,m_id,s_id , status)
             values('$sh_weight','$category','$p_date','$d_date','$m_id','$s_id' , '$status')";
 
     $flag2 =$connect->query($sql2);

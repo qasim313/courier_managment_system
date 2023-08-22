@@ -1,6 +1,7 @@
 <?php
   include 'CheckifLogin.php';
   include('connection.php');
+  
   $sh_id = $_GET['sh_id'];
   $c_id = $_GET['c_id'];
    
@@ -79,3 +80,4 @@
     </div>
 </body>
 </html>
+

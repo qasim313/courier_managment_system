@@ -7,7 +7,7 @@
     $weight = $_GET['weight'];
     $category = $_GET['category'];
     $issue_date = $_GET['issue_date'];
-    $delievery_date = $_GET['delievery_date'];
+    $delievery_date = $_GET['delivery_date'];
     $m_id = $_GET['m_id'];
     $s_id = $_GET['s_id'];
     $c_id = $_GET['c_id'];
@@ -19,10 +19,16 @@
 <html >
 <head>
 <link rel="stylesheet" href="./Css/CourierFormStyling.css" />
+    <style>
+        body{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+    </style>
 
     <title>Upadte_Shipment</title>
 </head>
-<body>
+<body >
 <div class="container">
       <form method="post" class="item1">
         <h3 class="item1-1">Upadte Detail</h3>
@@ -65,7 +71,7 @@
             $delievery_date = $_POST['delievery_date'];
             $status = $_POST['status'];
            //just want to update the weight and delievery date
-            $sql = "UPDATE `shipment` SET `weight`='$weight',`delievery_date`='$delievery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
+            $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delivery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
             $result = $connect->query($sql);
             if ($result) {
                 echo "<script>alert('Data Updated Successfully')</script>";
