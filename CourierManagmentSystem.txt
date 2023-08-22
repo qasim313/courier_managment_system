@@ -50,38 +50,38 @@ create TABLE payment (
 )auto_increment=2023080001;
 
 CREATE TABLE pay (
-s_id int , FOREIGN key (s_id) REFERENCES shipper(s_id) ,
-    sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id),
-    p_id int , FOREIGN key (p_id) REFERENCES payment (p_id)
+s_id int , FOREIGN key (s_id) REFERENCES shipper(s_id) on delete cascade,
+    sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id) on delete cascade,
+    p_id int , FOREIGN key (p_id) REFERENCES payment (p_id) on delete cascade
 );
 CREATE TABLE assign (
-m_id int , FOREIGN KEY (m_id) REFERENCES manager (m_id) ,
-sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id),
-c_id int , FOREIGN key (c_id) REFERENCES courier (c_id),
+m_id int , FOREIGN KEY (m_id) REFERENCES manager (m_id) on delete cascade,
+sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id) on delete cascade,
+c_id int , FOREIGN key (c_id) REFERENCES courier (c_id) on delete cascade,
 description text
 );
 
 alter table customer
 add  s_id int,
-add FOREIGN key (s_id) REFERENCES shipper (s_id);
+add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete cascade;
 
 alter table payment 
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id);
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade;
 
 alter table courier 
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id);
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade;
 
 alter table shipper 
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id);
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade;
 
 
 alter table shipment
 add m_id int,
-add FOREIGN key (m_id) REFERENCES manager (m_id),
+add FOREIGN key (m_id) REFERENCES manager (m_id) on delete cascade,
 add s_id int,
-add FOREIGN key (s_id) REFERENCES shipper (s_id),
+add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete cascade,
 add c_id int,
-add FOREIGN key (c_id) REFERENCES courier (c_id);
+add FOREIGN key (c_id) REFERENCES courier (c_id) on delete cascade;

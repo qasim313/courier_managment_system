@@ -6,7 +6,7 @@
     $id = $_REQUEST['id'];
     $pass = $_REQUEST['password'];
     $sql = "select name from courier where password = $pass and c_id = '$id'";
-    $result = mysqli_query($connect, $sql);
+    
     if($result && $result->num_rows == 1){
         
         $row = mysqli_fetch_assoc($result);
