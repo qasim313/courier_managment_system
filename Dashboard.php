@@ -45,7 +45,10 @@
               <div class="card">
                   <h2>Total Shipments</h2>
                   <?php
-                      $num = 1;
+                      $sql ="select * from shipment";
+                      $r = $connect->query($sql);
+                      $num = $r->num_rows;
+                      
                       echo "<h2>$num </h2>";
                   ?>
 
@@ -53,32 +56,81 @@
               <div class="card">
                   <h2>Delivered Shipments</h2>
                   <?php
-                      $num = 1;
-                      echo "<h2>$num </h2>";
+                        $sql ="select * from shipment where status like 'd%'";
+                        $r = $connect->query($sql);
+                        $num = $r->num_rows;
+                        
+                        echo "<h2>$num </h2>";
                   ?>
               </div>
               <div class="card">
                   <h2>Assigned Shipments</h2>
                   <?php
-                      $num = 1;
+                      $sql ="select * from shipment where c_id is not null ";
+                      $r = $connect->query($sql);
+                      $num = $r->num_rows;
                       echo "<h2>$num</h2>";
                   ?>
 
               </div>
           </div>
           <div class="dashboard_table">
-              <h1 style="color:black">Shippments</h1>
+              <h1 >Shippments</h1>
+
+              <?php
+
+
+            echo "
               <table>
                   <tr>
-                      <th style="background:black;">Id</th>
-                      <th style="background:black;">delivery Status</th>
-                      <th style="background:black;">delievery Date</th>
-                      <th style="background:black;">Contect</th>
-                      <th style="background:black;">Delivery Location</th>
-                      <th style="background:black;">Courier id</th>
-                      <th style="background:black;">Courier Name</th> 
+                      <th >Id</th>
+                      <th >delivery Status</th>
+                      <th >delivery Date</th>
+                      <th >Shipper name</th>
+                      <th >Receiver Name</th>
+                      <th >Contact</th>
+                      <th >Delivery Location</th>
+                      
                   </tr>
+                  ";
+
+
+
+            
+
+                        $sql ="SELECT shipment.* ,customer.phone ,customer.address , customer.name ,shipper.name as sname FROM `shipment`  JOIN shipper USING (s_id) JOIN customer USING(s_id); ";
+
+                        $result = $connect->query($sql);
+
+                        while ( $row = $result->fetch_assoc()) {
+                           
+                        
+                            echo "
+
+                            <tr>
+                                <td>$row[sh_id]</td>
+                                <td>$row[status]</td>
+                                <td>$row[delivery_date]</td>
+                                <td>$row[sname]</td>
+                                <td>$row[name]</td>
+                                <td>$row[phone]</td>
+                                <td>$row[address]</td>
+                               
+                            
+                            <tr>
+                            
+                            ";
+
+
+
+                            $sql ="select * from shipment";
+
+
+
+
+                        }
                   
+                  ?>
               </table>
 
 

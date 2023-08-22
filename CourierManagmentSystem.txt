@@ -5,7 +5,7 @@ sh_id int primary key auto_increment,
 weight numeric not null , 
 category varchar(50) not null, 
 issue_date date not null ,
-delievery_date date not null ,
+delivery_date date not null ,
 status varchar(25) not null 
  )auto_increment=20000;
 
