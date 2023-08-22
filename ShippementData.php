@@ -2,10 +2,12 @@
     include 'CheckifLogin.php';
     include ('connection.php');
 
+
     $sh_weight = $_REQUEST['sh-weight'];
     $category = $_REQUEST['type'];
     $p_date = $_REQUEST['p-date'];
     $d_date = $_REQUEST['d-date'];
+
 
     $s_name = $_REQUEST['s-name'];
     $s_address = $_REQUEST['s-address'];
@@ -186,3 +188,5 @@
 
 
 ?>
+
+

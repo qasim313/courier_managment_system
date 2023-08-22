@@ -11,6 +11,7 @@
     $m_id = $_GET['m_id'];
     $s_id = $_GET['s_id'];
     $c_id = $_GET['c_id'];
+    $status = $_GET['status'];
 
 ?>
 
@@ -33,15 +34,23 @@
         <label for="category">Category:</label>
         <input type="text" name="category" id="category" class="item1-2"  value ="<?php echo $category; ?>" readonly/>
         <label for="issue_date">Issue Date:</label>
-        <input type="date" name="issue_date" id="" value ="<?php echo $issue_date; ?>">
+        <input type="date" name="issue_date" id="" value ="<?php echo $issue_date; ?>" readonly/>
         <label for="delievery_date">Delievery Date:</label>
         <input type="date" name="delievery_date" id="" value ="<?php echo $delievery_date; ?>">
-        <label for="m_id">Manager id:</label>
-        <input type="text" name="m_id" id="" value ="<?php echo $m_id; ?>">
-        <label for="s_id">Shipper id:</label>
-        <input type="text" name="s_id" id="" value ="<?php echo $s_id; ?>">
-        <label for="c_id">Courier id:</label>
-        <input type="text" name="c_id" id="" value ="<?php echo $c_id; ?>">
+        <label for="">Status:</label>
+        <select id="status" name="status" Value="<?php echo $status?>">
+            <?php
+            if($status == "not delivered"){
+                echo '<option value="delivered" selected>delivered</option>';
+                echo '<option value="not delivered" selected>not delivered</option>';   
+            ?>
+            <?php
+            }else{
+                echo '<option value="not delivered" selected>not delivered</option>';
+                echo '<option value="delivered" selected>delivered</option>';
+            }
+            ?>   
+        </select>
 
         <br />
         <input type="submit" value="Submit" id="btn" name="enter" />
@@ -53,14 +62,10 @@
         if (isset($_POST['enter'])) {
             $sh_id = $_POST['id'];
             $weight = $_POST['weight'];
-            $category = $_POST['category'];
-            $issue_date = $_POST['issue_date'];
             $delievery_date = $_POST['delievery_date'];
-            $m_id = $_POST['m_id'];
-            $s_id = $_POST['s_id'];
-            $c_id = $_POST['c_id'];
+            $status = $_POST['status'];
            //just want to update the weight and delievery date
-            $sql = "UPDATE `shipment` SET `weight`='$weight',`category`='$category',`issue_date`='$issue_date',`delievery_date`='$delievery_date' WHERE `sh_id`='$sh_id'";
+            $sql = "UPDATE `shipment` SET `weight`='$weight',`delievery_date`='$delievery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
             $result = $connect->query($sql);
             if ($result) {
                 echo "<script>alert('Data Updated Successfully')</script>";

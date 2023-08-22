@@ -135,19 +135,19 @@
             <div class="get-data">
               <div class="left-data">
                 <label for="">Shipper Name:</label>
-                <input type="text" name="s-name">
+                <input type="text" name="s-name" required>
   
                 <label for="">Shipper phone:</label>
-                <input type="tel" name="s-ph" id="">
+                <input type="tel" name="s-ph" id="" required>
   
                 <label for="">Shipper Address:</label>
-                <input type="text" name="s-address" id="">
+                <input type="text" name="s-address" id="" required>
   
                 <label for="">Shipper id:</label>
                 <input style="opacity:0.5;font-weight: bold;" type="text" name="s-id" id="" value="auto generated" readonly="read">
 
                 <label for="">shippment Weight:</label>
-                <input type="text" name="sh-weight" id="">
+                <input type="text" name="sh-weight" id="" required>
 
                 <label for="">Category:</label>
                 <select name="type" id="payMethod">
@@ -161,18 +161,18 @@
                 <div class="right-data">
 
                   <label for="">Place Date:</label>
-                  <input type="date" name="p-date" id="">
+                  <input type="date" name="p-date" id="" required>
 
                   <label for="">Delivery Date:</label>
-                  <input type="date" name="d-date" id="">
+                  <input type="date" name="d-date" id=""required>
                   
     
 
                   <label for="">Receiver Name:</label>
-                  <input type="text" name="r-name">
+                  <input type="text" name="r-name"required>
     
                   <label for="">Receiver contact:</label>
-                  <input type="tel" name="r-contact" id="">
+                  <input type="tel" name="r-contact" id=""required>
     
                   <label for="">Receiver Address:</label>
                   <!-- <input type="text" name="r-address" id=""> -->
@@ -214,6 +214,7 @@
         <input type="Button" value="Continue" id="btn" />
       </form>
     </div>
+
 
     <script>
     

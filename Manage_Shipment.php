@@ -86,10 +86,12 @@
         <th>Category</th>
         <th>Issue Date</th>
         <th>Delievery Date</th>
+        <th>Status</th>
         <th>Manager ID</th>
         <th>Shipper ID</th>
         <th>Customer ID</th>
-        <th>Manage</th>
+        <th>Update</th>
+        <th>Delete</th>
     </tr>';
     
     while($row=mysqli_fetch_assoc($result)){
@@ -116,7 +118,9 @@
                 <td>'.$s_id.'</td>
                 <td>'.$c_id.'</td>
                 <td  class="btn-instance">
-                <a href="updateShipment.php?sh_id='.$row['sh_id'].'&weight='.$row['weight'].'&category='.$row['category'].'&issue_date='.$row['issue_date'].'&delievery_date='.$row['delievery_date'].'&m_id='.$row['m_id'].'&s_id='.$row['s_id'].'&c_id='.$row['c_id'].'">Update</a>
+                <a href="updateShipment.php?sh_id='.$row['sh_id'].'&weight='.$row['weight'].'&category='.$row['category'].'&issue_date='.$row['issue_date'].'&delievery_date='.$row['delievery_date'].'&m_id='.$row['m_id'].'&s_id='.$row['s_id'].'&c_id='.$row['c_id'].'&status='.$row['status'].'">Update</a>
+                </td>
+                <td  class="btn-instance">
                 <a href="deleteShipment.php?sh_id='.$row['sh_id'].'">Delete</a>
                 </td>
             </tr>';
