@@ -102,7 +102,7 @@
       'shipment_id' => $row['sh_id'],
       'customer_name' => $shipper_name['name'],
       'order_date' => $row['issue_date'],
-      'estimated_delivery_date' => $row['delievery_date']
+      'estimated_delivery_date' => $row['delivery_date']
     );
   ?>
   
