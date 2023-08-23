@@ -5,7 +5,7 @@
 
     $id = $_REQUEST['id'];
     $pass = $_REQUEST['password'];
-    $sql = "select name from courier where password = $pass and c_id = '$id'";
+    $sql = "select name from courier where password = '$pass' and c_id = '$id'";
     $result = mysqli_query($connect, $sql);
 
 

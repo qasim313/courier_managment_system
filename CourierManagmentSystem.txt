@@ -21,14 +21,14 @@ create table courier(
 c_id int primary key auto_increment,
 name varchar(30) , 
 status  text , 
-PASSWORD text not null , 
+PASSWORD varchar(15) not null , 
 address text, 
 contact varchar(11) )auto_increment=22000;
 
 create table manager(
 	m_id int primary key,
     name varchar(30) NOT null,
-    password text not null , 
+    password varchar(15) not null , 
     contact varchar(11) 
 );
 
