@@ -113,7 +113,7 @@
 
     <nav>
         <ul>
-            <li><a href="Dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i>DashBoard</a></li>
+            <li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i>DashBoard</a></li>
             <button><a href="logout.php">Logout</a></button>
         </ul>
     </nav>
@@ -205,7 +205,7 @@
         // alert(shId);
         $.ajax({
             type: "POST",
-            url: "update_courier.php", // Replace with the PHP script to handle the update
+            url: "updateShipmentStatus.php", // Replace with the PHP script to handle the update
             data: {
                 sh_id: shId,
                 new_status: newStatus
