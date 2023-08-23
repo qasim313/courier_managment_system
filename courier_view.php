@@ -138,7 +138,7 @@
                     <tr>
                         <td>$row[sh_id]</td>
                         <td>$row[issue_date]</td>
-                        <td>$row[delievery_date]</td>
+                        <td>$row[delivery_date]</td>
                         <td>$row[contact]</td>
                         <td>$row[status]</td>
                         <td>$row[address]</td>
