@@ -66,7 +66,7 @@
               <div class="card">
                   <h2>Assigned Shipments</h2>
                   <?php
-                      $sql ="select * from shipment where c_id is not null ";
+                      $sql ="SELECT * FROM `assign` join shipment using(sh_id) WHERE shipment.status like 'not%'; ";
                       $r = $connect->query($sql);
                       $num = $r->num_rows;
                       echo "<h2>$num</h2>";

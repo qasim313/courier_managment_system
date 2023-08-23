@@ -131,7 +131,7 @@
                 <th>Update Status</th> 
             </tr>
             <?php
-            $sql = "select * from courier join assign using(c_id) join shipment using(sh_id) join shipper using(s_id) WHERE shipment.c_id = $receivedValue";
+            $sql = "select shipment.* , customer.address , customer.phone from shipment join shipper using(s_id) join customer using(s_id)  WHERE shipment.c_id = $receivedValue  order by status desc";
             $result = $connect->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo "
@@ -139,7 +139,7 @@
                         <td>$row[sh_id]</td>
                         <td>$row[issue_date]</td>
                         <td>$row[delivery_date]</td>
-                        <td>$row[contact]</td>
+                        <td>$row[phone]</td>
                         <td>$row[status]</td>
                         <td>$row[address]</td>
                         <td>
