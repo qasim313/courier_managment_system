@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="./Css/footer.css" />
     <footer>
       <div class="footer-content">
-        <h1 style="color:white;">Company name</h1>
+        <h1 style="color:white;">Courier Management System</h1>
         <p>
-          <b>company name</b>
-          456 Park Avenue,
-          Lahore, lhr,
+          <b>Courier Management System</b>
+          Gift University,
+          Gujranwala, Gjw,
           Pakistan,
-          10001
+          52250
         </p>
         <div class="footer-icon">
           <a href="#">

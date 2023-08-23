@@ -57,8 +57,7 @@ s_id int , FOREIGN key (s_id) REFERENCES shipper(s_id) on delete cascade,
 CREATE TABLE assign (
 m_id int , FOREIGN KEY (m_id) REFERENCES manager (m_id) on delete cascade,
 sh_id int , FOREIGN key (sh_id) REFERENCES shipment (sh_id) on delete cascade,
-c_id int , FOREIGN key (c_id) REFERENCES courier (c_id) on delete cascade,
-description text
+c_id int , FOREIGN key (c_id) REFERENCES courier (c_id) on delete cascade
 );
 
 alter table customer

@@ -157,11 +157,6 @@
                   <option value="Express shipments">Express shipments</option>
                   <option value="High Value shipments">High Value shipments</option>
                 </select>
-
-                <label for="">Shippment status:</label>
-                <input type="text" name="status" value="not delivered" readonly>
-
-  
               </div>
                 <div class="right-data">
 
@@ -194,14 +189,8 @@
                     <option value="People Colony">People Colony</option>
                   </select>
 
-                  <label for="">Payment status</label>
-
-                  <select name="payMethod" id="payMethod">
-                    <option value="not received">not received</option>
-                    <option value="received">received</option>   
-                  </select>                
-                
-
+                  <label for="">Shippment status:</label>
+                  <input type="text" name="status" value="not delivered" readonly>
               </div>
             </div>
             <div class="total" id="total">
