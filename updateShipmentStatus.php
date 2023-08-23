@@ -10,7 +10,7 @@
         if($result)echo"status updated!";
         else echo "failed to update status";
 
-        $sql = "DELETE FROM shipment USING (sh_id) WHERE shipment.status like 'delivered'" ;
+        $sql = "DELETE assign FROM assign inner JOIN shipment ON assign.sh_id = shipment.sh_id WHERE shipment.status = 'delivered';" ;
         $result=$connect->query($sql);
 
     }

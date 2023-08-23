@@ -73,6 +73,10 @@
            //just want to update the weight and delievery date
             $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delivery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
             $result = $connect->query($sql);
+
+            $sql = "DELETE assign FROM assign inner JOIN shipment ON assign.sh_id = shipment.sh_id WHERE shipment.status = 'delivered';" ;
+            $result1=$connect->query($sql);
+            
             if ($result) {
                 echo "<script>alert('Data Updated Successfully')</script>";
                 echo "<script>window.location.href='Manage_Shipment.php'</script>";
