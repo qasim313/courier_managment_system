@@ -221,7 +221,6 @@
       $(document).ready(function() {
       $("#btn").click(function() {
         //get the whole form data
-        var formData = $("form").serialize();
         //check if any field is empty
         if (
           $("input[name='s-name']").val() == "" ||
@@ -239,8 +238,7 @@
         }
         //check if p-date is smaller than d-date
         if (
-          new Date($("input[name='p-date']").val()) >
-          new Date($("input[name='d-date']").val())
+          $("input[name='p-date']").val() > $("input[name='d-date']").val()
         ) {
           alert("Place date cannot be greater than delivery date");
           return false;
