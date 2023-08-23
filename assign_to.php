@@ -21,12 +21,12 @@
 
 
   <?php
-    $sql = "SELECT * from courier WHERE c_id in (select DISTINCT courier.c_id  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '$area' and shipment.status like 'not%')  ";
+    $sql = "SELECT * from courier WHERE c_id in (select DISTINCT courier.c_id  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '$area')  ";
 
     $result = $connect->query($sql);
 
     if ($result->num_rows <= 0) {
-      $sql =" SELECT * FROM courier  where c_id not in (SELECT courier.c_id FROM courier JOIN assign using(c_id) join shipment using(sh_id) where shipment.status like 'not%')";
+      $sql =" SELECT * FROM courier  where c_id not in (SELECT courier.c_id FROM courier natural JOIN assign )";
       $result = $connect->query($sql);
     }
 

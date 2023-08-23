@@ -1,25 +1,9 @@
 <?php
  include 'CheckifLogin.php';
-    include ('connection.php');
+include ('connection.php');
 
 
-    $c_id = $_REQUEST['id'];
-    $c_name = $_REQUEST['name'];
-    $c_location = $_REQUEST['location'];
-    $c_contact = $_REQUEST['ph'];
-    $pass = $_REQUEST['password'];
-    $status = $_REQUEST['status'];
-
-
-    $sql = "select m_id from manager";
-    $stmt = $connect->query($sql);
-
-    $result = $stmt->FETCH_ASSOC();
-    $m_id = $result['m_id'];
-
-    $sql1 = "INSERT INTO `courier`(`name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) VALUES ('$c_name','$status','$pass','$c_location','$c_contact','$m_id')";
-
-    $connect->query($sql1);
+    
 
    
 

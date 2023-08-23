@@ -9,13 +9,14 @@
   </head>
   <body>
   <?php
+    include('connection.php');
     include 'CheckifLogin.php';
 
     include ("navBar.php");
   ?>
 
     <div class="container">
-      <form action="courierdta.php" class="item1">
+      <form method="post" class="item1">
         <h3 class="item1-1">Courier Detail</h3>
 
         <label for="id">Courier id:</label>
@@ -40,9 +41,33 @@
 
 
         <br />
-        <input type="submit" value="Submit" id="btn" />
+        <input type="submit" value="Submit" id="btn" name="sub" />
       </form>
     </div>
+
+    <?php
+
+
+    if ( isset($_POST['sub'])){
+          $c_id = $_POST['id'];
+          $c_name = $_POST['name'];
+          $c_location = $_POST['location'];
+          $c_contact = $_POST['ph'];
+          $pass = $_POST['password'];
+          $status = $_POST['status'];
+
+
+          $sql = "select m_id from manager";
+          $stmt = $connect->query($sql);
+
+          $result = $stmt->FETCH_ASSOC();
+          $m_id = $result['m_id'];
+
+          $sql1 = "INSERT INTO `courier`(`name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) VALUES ('$c_name','$status','$pass','$c_location','$c_contact','$m_id')";
+
+          $connect->query($sql1);
+    }
+    ?>
 
 <?php
   include ("footer.php");
