@@ -8,6 +8,19 @@
     $p_date = $_REQUEST['p-date'];
     $d_date = $_REQUEST['d-date'];
 
+//     $date1 = strtotime($p_date);
+//   $date2 = strtotime($d_date);
+//   $diff = $date2 - $date1;
+//   $days = floor($diff / (60 * 60 * 24));
+//   if($diff < 0) {
+//     //give an alert in js
+//     echo "<script>alert('Delivery date should be greater than place date')</script>";
+//     header("Location:ShipmentDetail.php");
+//     exit();
+//   }
+
+
+
 
     $s_name = $_REQUEST['s-name'];
     $s_address = $_REQUEST['s-address'];
@@ -189,4 +202,5 @@
 
 ?>
 
+//
 

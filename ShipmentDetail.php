@@ -220,6 +220,31 @@
     
       $(document).ready(function() {
       $("#btn").click(function() {
+        //get the whole form data
+        var formData = $("form").serialize();
+        //check if any field is empty
+        if (
+          $("input[name='s-name']").val() == "" ||
+          $("input[name='s-ph']").val() == "" ||
+          $("input[name='s-address']").val() == "" ||
+          $("input[name='sh-weight']").val() == "" ||
+          $("input[name='p-date']").val() == "" ||
+          $("input[name='d-date']").val() == "" ||
+          $("input[name='r-name']").val() == "" ||
+          $("input[name='r-contact']").val() == "" ||
+          $("input[name='r-address']").val() == ""
+        ) {
+          alert("Please fill all the fields");
+          return false;
+        }
+        //check if p-date is smaller than d-date
+        if (
+          new Date($("input[name='p-date']").val()) >
+          new Date($("input[name='d-date']").val())
+        ) {
+          alert("Place date cannot be greater than delivery date");
+          return false;
+        }
         var shWeight = $("input[name='sh-weight']").val();
         var category = $("select[name='type']").val();
         
