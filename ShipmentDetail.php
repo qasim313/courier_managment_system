@@ -190,7 +190,7 @@
                   </select>
 
                   <label for="">Shippment status:</label>
-                  <input type="text" name="status" value="not delivered" readonly>
+                  <input type="text" name="status" value="in process" readonly>
               </div>
             </div>
             <div class="total" id="total">
