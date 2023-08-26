@@ -147,7 +147,7 @@
                 <input style="opacity:0.5;font-weight: bold;" type="text" name="s-id" id="" value="auto generated" readonly="read">
 
                 <label for="">shippment Weight:</label>
-                <input type="text" name="sh-weight" id="" required>
+                <input type="text" name="sh-weight" id=""z required>
 
                 <label for="">Category:</label>
                 <select name="type" id="payMethod">
@@ -190,7 +190,7 @@
                   </select>
 
                   <label for="">Shippment status:</label>
-                  <input type="text" name="status" value="not delivered" readonly>
+                  <input type="text" name="status" value="in process" readonly>
               </div>
             </div>
             <div class="total" id="total">
