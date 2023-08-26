@@ -91,7 +91,7 @@
       if(isset($_POST['submit'])){
         $area = $_REQUEST['area'];
   
-        $sql = "select  shipper.s_id , customer.address , customer.phone , customer.name , shipment.sh_id , shipment.weight , shipment.category , shipment.status  from shipper join customer USING (s_id) join shipment USING (s_id) where shipment.sh_id not in (SELECT sh_id from assign) and customer.address like '$area' and shipment.status like 'not%' ";
+        $sql = "select  shipper.s_id , customer.address , customer.phone , customer.name , shipment.sh_id , shipment.weight , shipment.category , shipment.status  from shipper join customer USING (s_id) join shipment USING (s_id) where shipment.sh_id not in (SELECT sh_id from assign) and customer.address like '$area' and shipment.status like 'in%' ";
 
         // var_dump($sql);
   
