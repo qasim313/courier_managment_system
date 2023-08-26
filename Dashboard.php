@@ -74,7 +74,7 @@
         </div>
         <div class="card">
             <?php
-            $sql ="SELECT * FROM `assign` join shipment using(sh_id) WHERE shipment.status like 'not%'; ";
+            $sql ="SELECT * FROM  shipment WHERE `status` like 'assign' ";
             $r = $connect->query($sql);
             $num3 = $r->num_rows;
             ?>
