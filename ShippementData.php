@@ -191,14 +191,16 @@
     //         insertData();
             $connect->close();
             if($flag1 && $flag1 && $flag2 && $flag3 && $flag4 && $result1 && $result2 && $result3 ){
-                echo"alert('Shipment Added Successfully!)";
+                
+                // echo"<script>alert('Shipment Added Successfully: $sh_id!')</script>)";
+                echo "<script>
+                if (confirm('Shipment Track id is $sh_id')) {
+                    window.location.href = 'ShipmentDetail.php';
+                }
+            </script>"; 
             }else{
                 echo"alert('Failed to Add Shipment!)";
             }
-            
-            header("Location: ShipmentDetail.php");
-            exit();
-
 
 ?>
 

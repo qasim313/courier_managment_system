@@ -14,23 +14,31 @@
         }
 
         .card {
-          display :inline-flex;
-          justify-content: space-between;
-          padding : 10px 8px ;
-          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-          transition: 0.3s;
-          width: 40%;
-          border-radius: 5px;
-          margin: 10px;
-          height: 20vh;
-          /* color: #37bc9b; */
+            display: inline-block;
+            width: calc(33.33% - 20px);
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
 
-      }
-      
-      .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      } 
-      
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .number {
+            font-size: 36px;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #666;
+        }
     </style>
 <body >
 
@@ -42,37 +50,40 @@
 
       <main> 
           <div class="container">
-              <div class="card">
-                  <h2>Total Shipments</h2>
-                  <?php
-                      $sql ="select * from shipment";
-                      $r = $connect->query($sql);
-                      $num = $r->num_rows;
-                      
-                      echo "<h2>$num </h2>";
-                  ?>
+          <div class="card">
+            <?php
+            $sql ="select * from shipment";
+            $r = $connect->query($sql);
+            $num1 = $r->num_rows;
+            ?>
+            <div class="content">
+                <h2 class='number'><?php echo "$num1" ?></h2>
+                <h3 class='title'>Total Shipments</h3>
+            </div>
+        </div>
+        <div class="card">
+            <?php
+            $sql ="select * from shipment where status like 'd%'";
+            $r = $connect->query($sql);
+            $num2 = $r->num_rows;
+            ?>
+            <div class="content">
+                <h2 class='number'><?php echo "$num2" ?></h2>
+                <h3 class='title'>Delivered Shipments</h3>
+            </div>
+        </div>
+        <div class="card">
+            <?php
+            $sql ="SELECT * FROM `assign` join shipment using(sh_id) WHERE shipment.status like 'not%'; ";
+            $r = $connect->query($sql);
+            $num3 = $r->num_rows;
+            ?>
+            <div class="content">
+                <h2 class='number'><?php echo "$num3" ?></h2>
+                <h3 class='title'>Assigned Shipments</h3>
+            </div>
+        </div>
 
-              </div>
-              <div class="card">
-                  <h2>Delivered Shipments</h2>
-                  <?php
-                        $sql ="select * from shipment where status like 'd%'";
-                        $r = $connect->query($sql);
-                        $num = $r->num_rows;
-                        
-                        echo "<h2>$num </h2>";
-                  ?>
-              </div>
-              <div class="card">
-                  <h2>Assigned Shipments</h2>
-                  <?php
-                      $sql ="SELECT * FROM `assign` join shipment using(sh_id) WHERE shipment.status like 'not%'; ";
-                      $r = $connect->query($sql);
-                      $num = $r->num_rows;
-                      echo "<h2>$num</h2>";
-                  ?>
-
-              </div>
           </div>
           <div class="dashboard_table">
               <h1 >Shippments</h1>

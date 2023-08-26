@@ -71,7 +71,7 @@
             $delievery_date = $_POST['delievery_date'];
             $status = $_POST['status'];
            //just want to update the weight and delievery date
-            $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delivery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
+            $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
             $result = $connect->query($sql);
 
             $sql = "DELETE assign FROM assign inner JOIN shipment ON assign.sh_id = shipment.sh_id WHERE shipment.status = 'delivered';" ;

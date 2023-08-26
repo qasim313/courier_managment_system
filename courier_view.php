@@ -71,7 +71,7 @@
 
     .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: black;
     color: white;
     }
 
@@ -90,7 +90,7 @@
         padding:10px;
     }
     #update_btn{
-        background-color:green;
+        background-color:black;
         color:white;
         font-size:13px;
         padding: 5px 15px 5px 15px;
@@ -164,7 +164,6 @@
                 <input class="txt" id="sh_id_in_pop" value="" readonly /><br><br>
                 <label for="payMethod">Status: </label><br>
                 <select class="txt" id="payMethod">
-                    <option value="not delivered">not delivered</option>
                     <option value="delivered">delivered</option>
                 </select>
             </div>

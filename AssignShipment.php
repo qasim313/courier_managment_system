@@ -83,6 +83,7 @@
       <input type="submit" value="Enter" name="submit">
 
       </form>
+  </div>
 
 
       <?php
@@ -101,7 +102,6 @@
 
         echo "
         <div class='dashboard_table'>
-        <div class='table-content'>
             
             <table>
             <tr>
@@ -115,13 +115,7 @@
                 <th>Category</th>
                 <th>Assign</th>
             </tr> ";
-        
-      
-
-          
             while($row=$result->fetch_assoc()){
-
-        
               echo "
                 <tr>
                 <td>$row[s_id]</td>
@@ -143,14 +137,14 @@
           
          
           echo "
-          </div>
-          </div>
-          </table>";
+          
+          </table>
+          </div>";
+
   
       }
       
       ?>
-  </div>
 
 
   
