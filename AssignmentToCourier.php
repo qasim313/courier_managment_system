@@ -13,7 +13,7 @@
 
   $sql = "INSERT INTO `assign`(`m_id`, `sh_id`, `c_id`) VALUES ($m_id , $sh_id , $c_id )";
   $connect->query($sql);
-  $sql = "UPDATE `shipment` SET `c_id`= $c_id  WHERE sh_id = $sh_id";
+  $sql = "UPDATE `shipment` SET `c_id`= $c_id , 'status' = 'assign' WHERE sh_id = $sh_id";
   $connect->query($sql);
 ?>
 <!DOCTYPE html>

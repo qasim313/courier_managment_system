@@ -11,21 +11,21 @@
 <body>
 
     <?php
-     include 'CheckifLogin.php';
+        include 'CheckifLogin.php';
         include('connection.php');
         include('navBar.php');
 
-      $sql = "select * from courier";
+        $sql = "select * from courier";
 
 
-      $result = $connect->query($sql);
+        $result = $connect->query($sql);
 
 
       ?>
 
 
 
-<div class="dashboard_table">
+            <div class="dashboard_table">
               <h1 style="color:black">Courier Detail</h1>
               <table>
                   <tr>
