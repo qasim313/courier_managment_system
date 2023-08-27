@@ -20,3 +20,19 @@
 ->dashboard(card+table)
 ->c_id addition in shipment
 ->send track id to customer contact
+
+
+
+
+//submission tasks
+
+hashir=> rm(rough)+ppt
+mateen => word
+khan=> draw rm+erd
+
+//ppt work-breakdown
+
+Qasim => login,checkcredentials,courierview(backend),shipmentstatus
+mateen => add shipment(shipmentDetails),backend(shipmentdata),courier_view(add courier)
+abdul rehman => manage shipment,manage courier
+hashir => assign,dashboard
