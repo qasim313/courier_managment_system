@@ -32,7 +32,7 @@
         .number {
             font-size: 36px;
             margin-bottom: 5px;
-            color: #3498db;
+            color: black;
         }
 
         .title {

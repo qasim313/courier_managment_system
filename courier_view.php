@@ -164,7 +164,6 @@
                 <input class="txt" id="sh_id_in_pop" value="" readonly /><br><br>
                 <label for="payMethod">Status: </label><br>
                 <select class="txt" id="payMethod">
-                    <option value="not delivered">not delivered</option>
                     <option value="delivered">delivered</option>
                 </select>
             </div>
