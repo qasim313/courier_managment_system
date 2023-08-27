@@ -61,7 +61,7 @@
                                 <a href='delete_courier.php?c_id=$row[c_id]'>Delete</a>
                             </td>
                             <td>
-                                <a href='update_courier.php?c_id=$row[c_id]&name=$row[name]&status=$row[status]&PASSWORD=$row[PASSWORD]&contact=$row[contact]&address='>update<a>
+                                <a href='update_courier.php?c_id=$row[c_id]&name=$row[name]&status=$row[status]&PASSWORD=$row[PASSWORD]&contact=$row[contact]&address=$row[address]'>update<a>
                             </td>
                         </tr>
                         

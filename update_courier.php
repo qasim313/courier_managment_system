@@ -34,7 +34,7 @@
         <label for="phone">Contact no:</label>
         <input type="tel" name="ph" id="ph" class="item1-2"  value ="<?php echo $c_contact; ?>"/>
         <label for="location">Address:</label>
-        <input type="text" name="location" id="" value ="<?php echo $c_contact; ?>">
+        <input type="text" name="location" id="" value ="<?php echo $c_location; ?>">
         <label for="password">password:</label>
         <input type="text" name="password" id="" value ="<?php echo $pass; ?>">
 
