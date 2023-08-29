@@ -236,6 +236,11 @@
           alert("Please fill all the fields");
           return false;
         }
+        if("input[name='sh-weight']" < 0){
+          alert("Shippment weight cannot be negative");
+          return false;
+        }
+        
         //check if p-date is smaller than d-date
         if (
           $("input[name='p-date']").val() > $("input[name='d-date']").val()
