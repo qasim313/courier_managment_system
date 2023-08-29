@@ -113,7 +113,13 @@
 
     <nav>
         <ul>
-            <li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i>DashBoard</a></li>
+            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+             <?php 
+                $sql = "SELECT name FROM courier WHERE c_id='$receivedValue'";
+                $stmt = $connect->query($sql);
+                $result = $stmt->FETCH_ASSOC();
+                echo $result['name'];
+             ?></a></li>
             <button><a href="logout.php">Logout</a></button>
         </ul>
     </nav>
