@@ -43,6 +43,7 @@
     input[type="text"],
     input[type="tel"],
     input[type="date"],
+    input[type="number"],
     select {
       width: 100%;
       padding: 8px;
@@ -147,7 +148,7 @@
                 <input style="opacity:0.5;font-weight: bold;" type="text" name="s-id" id="" value="auto generated" readonly="read">
 
                 <label for="">shippment Weight:</label>
-                <input type="text" name="sh-weight" id="" required>
+                <input type="number" name="sh-weight" id="" required>
 
                 <label for="">Category:</label>
                 <select name="type" id="payMethod">

@@ -46,13 +46,13 @@
         <label for="">Status:</label>
         <select id="status" name="status" Value="<?php echo $status?>">
             <?php
-            if($status == "not delivered"){
+            if($status == "in process"){
                 echo '<option value="delivered" selected>delivered</option>';
-                echo '<option value="not delivered" selected>not delivered</option>';   
+                echo '<option value="not delivered" selected>in process</option>';   
             ?>
             <?php
             }else{
-                echo '<option value="not delivered" selected>not delivered</option>';
+                echo '<option value="not delivered" selected>in process</option>';
                 echo '<option value="delivered" selected>delivered</option>';
             }
             ?>   

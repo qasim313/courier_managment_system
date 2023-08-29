@@ -131,7 +131,8 @@
                 <th>Update Status</th> 
             </tr>
             <?php
-            $sql = "select shipment.* , customer.address , customer.phone from shipment join shipper using(s_id) join customer using(s_id)  WHERE shipment.c_id = $receivedValue  order by status desc";
+            $sql = "select shipment.* , customer.address , customer.phone from shipment join shipper
+             using(s_id) join customer using(s_id)  WHERE shipment.c_id = $receivedValue  order by status desc";
             $result = $connect->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo "

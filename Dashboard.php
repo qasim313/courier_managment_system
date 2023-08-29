@@ -131,11 +131,7 @@
                             <tr>
                             
                             ";
-
-
-
-                            $sql ="select * from shipment";
-
+                        
 
 
 

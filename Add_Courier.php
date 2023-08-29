@@ -63,7 +63,8 @@
           $result = $stmt->FETCH_ASSOC();
           $m_id = $result['m_id'];
 
-          $sql1 = "INSERT INTO `courier`(`name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) VALUES ('$c_name','$status','$pass','$c_location','$c_contact','$m_id')";
+          $sql1 = "INSERT INTO `courier`(`name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) 
+          VALUES ('$c_name','$status','$pass','$c_location','$c_contact','$m_id')";
 
           $connect->query($sql1);
     }
