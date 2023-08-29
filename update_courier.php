@@ -59,6 +59,16 @@
             $c_contact = $_POST['ph'];
             $pass = $_POST['password'];
             $status = $_POST['status'];
+            //validation
+            if (  empty($c_location) || empty($c_contact) || empty($pass)) {
+                echo "<script>alert('Please fill all the fields')</script>";
+                exit();
+            }
+            if (strlen($c_contact) != 11) {
+                echo "<script>alert('Please enter valid contact number')</script>";
+                exit();
+            }
+            
             $sql ="UPDATE `courier` SET `status`='$status',`PASSWORD`='$pass',`address`='$c_location',`contact`='$c_contact' WHERE c_id = $c_id";
             $result =$connect->query($sql);
             if ($result) {

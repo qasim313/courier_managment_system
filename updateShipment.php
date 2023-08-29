@@ -70,6 +70,13 @@
             $weight = $_POST['weight'];
             $delievery_date = $_POST['delievery_date'];
             $status = $_POST['status'];
+            //validation
+            if (empty($weight)) {
+                echo "<script>alert('Please Fill all the Fields')</script>";
+                exit();
+            }
+
+
            //just want to update the weight and delievery date
             $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
             $result = $connect->query($sql);
