@@ -115,7 +115,7 @@
         <ul>
             <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>
              <?php 
-                $sql = "SELECT name FROM courier WHERE c_id='$receivedValue'";
+                $sql = "SELECT CONCAT(UPPER(SUBSTR(name, 1, 1)), LOWER(SUBSTR(name, 2, LENGTH(name)))) AS name FROM courier WHERE c_id='$receivedValue'";
                 $stmt = $connect->query($sql);
                 $result = $stmt->FETCH_ASSOC();
                 echo $result['name'];
