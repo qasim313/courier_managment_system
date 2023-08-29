@@ -56,6 +56,19 @@
           $pass = $_POST['password'];
           $status = $_POST['status'];
 
+          //php form validation
+          if (empty($c_name) || empty($c_location) || empty($c_contact) || empty($pass) || empty($status)){
+            echo"<script> alert('Please fill all the fields'); </script>";
+            exit();
+          }
+          if (strlen($c_contact) != 11) {
+            echo"<script> alert('Contact number should be of 11 digits'); </script>";
+            exit();
+          }
+          if (strlen($pass) < 5) {
+            echo"<script> alert('Password should be of atleast 5 characters'); </script>";
+            exit();
+          }
 
           $sql = "select m_id from manager";
           $stmt = $connect->query($sql);
@@ -66,6 +79,7 @@
           $sql1 = "INSERT INTO `courier`(`name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) VALUES ('$c_name','$status','$pass','$c_location','$c_contact','$m_id')";
 
           $connect->query($sql1);
+          echo"<script> alert('Courier added successfully'); </script>";
     }
     ?>
 

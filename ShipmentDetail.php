@@ -240,19 +240,11 @@
           alert("Shippment weight cannot be negative");
           return false;
         }
-        if ("input[name='s-ph']".length < 11) {
-          alert("Phone number must be 11 digits");
-          return false;
-        }
-        if ("input[name='r-contact']".length < 11) {
-          alert("Phone number must be 11 digits");
-          return false;
-        }
-        if ("input[name='s-ph']".length > 11) {
-          alert("Phone number must be 11 digits");
-          return false;
-        }
-        if ("input[name='r-contact']".length > 11) {
+        //check if phone number is valid
+        if (
+          $("input[name='s-ph']").val().length != 11 ||
+          $("input[name='r-contact']").val().length != 11
+        ) {
           alert("Phone number must be 11 digits");
           return false;
         }
@@ -261,6 +253,10 @@
           $("input[name='p-date']").val() > $("input[name='d-date']").val()
         ) {
           alert("Place date cannot be greater than delivery date");
+          return false;
+        }
+        if (isNaN($("input[name='sh-weight']").val())) {
+          alert("Shippment weight must be a number");
           return false;
         }
         var shWeight = $("input[name='sh-weight']").val();
