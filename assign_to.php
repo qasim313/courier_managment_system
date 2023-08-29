@@ -26,7 +26,7 @@
     $result = $connect->query($sql);
 
     if ($result->num_rows <= 0) {
-      $sql =" SELECT * FROM courier  where c_id not in (SELECT courier.c_id FROM courier natural JOIN assign )";
+      $sql =" SELECT * FROM courier  where c_id not in (SELECT courier.c_id FROM courier natural JOIN assign  ) and courier.status like 'active'";
       $result = $connect->query($sql);
     }
 

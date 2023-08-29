@@ -68,7 +68,15 @@
                 echo "<script>alert('Please enter valid contact number')</script>";
                 exit();
             }
-            
+            $sql = "select * from courier join assign using (c_id) where c_id = $c_id";
+            $result =$connect->query($sql);
+
+            if ($result->num_rows > 0 ) {
+
+                echo "<script>alert ('cant update now courier have pending shipments');</script>";
+                exit();
+
+            }
             $sql ="UPDATE `courier` SET `status`='$status',`PASSWORD`='$pass',`address`='$c_location',`contact`='$c_contact' WHERE c_id = $c_id";
             $result =$connect->query($sql);
             if ($result) {
