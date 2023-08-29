@@ -6,6 +6,7 @@
 
     $sql = "DELETE FROM `shipment` WHERE  sh_id='$id' ";
     $result =$connect->query($sql);
+    
     if ($result) {
         echo "Deletion Sucessful";
         echo "<script>window.location.href='Manage_Shipment.php'</script>";

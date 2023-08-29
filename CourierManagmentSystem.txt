@@ -7,7 +7,7 @@ category varchar(50) not null,
 issue_date date not null ,
 delivery_date date not null ,
 status varchar(25) not null 
- )auto_increment=20000;
+)auto_increment=20000;
 
 create table shipper (
 s_id int primary key auto_increment,
@@ -37,11 +37,13 @@ values(1122,'Abdul Mateen','admin','03122323432');
 
 
 create table customer (
-name varchar(30) not null,
+name varchar(30),
 phone varchar(11),
-address text,
-primary key(name,phone)
- );
+address text ,
+s_id int, 
+FOREIGN key (s_id) REFERENCES shipper (s_id) on delete cascade ,
+PRIMARY key (name, s_id)
+);
 
 create TABLE payment (
     p_id int primary key auto_increment,
@@ -64,9 +66,7 @@ c_id int , FOREIGN key (c_id) REFERENCES courier (c_id) on delete cascade,
 primary key(m_id,sh_id,c_id)
 );
 
-alter table customer
-add  s_id int,
-add FOREIGN key (s_id) REFERENCES shipper (s_id) on delete set null;
+
 
 alter table payment 
 add m_id int,
