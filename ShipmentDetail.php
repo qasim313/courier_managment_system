@@ -237,11 +237,27 @@
           alert("Please fill all the fields");
           return false;
         }
+        if("input[name='sh-weight']" < 0){
+          alert("Shippment weight cannot be negative");
+          return false;
+        }
+        //check if phone number is valid
+        if (
+          $("input[name='s-ph']").val().length != 11 ||
+          $("input[name='r-contact']").val().length != 11
+        ) {
+          alert("Phone number must be 11 digits");
+          return false;
+        }
         //check if p-date is smaller than d-date
         if (
           $("input[name='p-date']").val() > $("input[name='d-date']").val()
         ) {
           alert("Place date cannot be greater than delivery date");
+          return false;
+        }
+        if (isNaN($("input[name='sh-weight']").val())) {
+          alert("Shippment weight must be a number");
           return false;
         }
         var shWeight = $("input[name='sh-weight']").val();
