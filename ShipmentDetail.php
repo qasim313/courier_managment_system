@@ -240,7 +240,22 @@
           alert("Shippment weight cannot be negative");
           return false;
         }
-        
+        if ("input[name='s-ph']".length < 11) {
+          alert("Phone number must be 11 digits");
+          return false;
+        }
+        if ("input[name='r-contact']".length < 11) {
+          alert("Phone number must be 11 digits");
+          return false;
+        }
+        if ("input[name='s-ph']".length > 11) {
+          alert("Phone number must be 11 digits");
+          return false;
+        }
+        if ("input[name='r-contact']".length > 11) {
+          alert("Phone number must be 11 digits");
+          return false;
+        }
         //check if p-date is smaller than d-date
         if (
           $("input[name='p-date']").val() > $("input[name='d-date']").val()
