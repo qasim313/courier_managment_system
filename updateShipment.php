@@ -48,11 +48,11 @@
             <?php
             if($status == "in process"){
                 echo '<option value="delivered" selected>delivered</option>';
-                echo '<option value="not delivered" selected>in process</option>';   
+                echo '<option value="in process" selected>in process</option>';   
             ?>
             <?php
             }else{
-                echo '<option value="not delivered" selected>in process</option>';
+                echo '<option value="in process" selected>in process</option>';
                 echo '<option value="delivered" selected>delivered</option>';
             }
             ?>   
@@ -75,13 +75,19 @@
                 echo "<script>alert('Please Fill all the Fields')</script>";
                 exit();
             }
+            if ($status == 'in process') {
+                $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status' , c_id=null WHERE `sh_id`='$sh_id'";
+            $result = $connect->query($sql);
+            } else {
+                $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status'  WHERE `sh_id`='$sh_id'";
+                $result = $connect->query($sql);
+            }
 
 
            //just want to update the weight and delievery date
-            $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status' WHERE `sh_id`='$sh_id'";
-            $result = $connect->query($sql);
+            
 
-            $sql = "DELETE assign FROM assign inner JOIN shipment ON assign.sh_id = shipment.sh_id WHERE shipment.status = 'delivered';" ;
+            $sql = "DELETE assign FROM assign inner JOIN shipment ON assign.sh_id = shipment.sh_id WHERE shipment.status = 'delivered' or shipment.status = 'in process' ;" ;
             $result1=$connect->query($sql);
             
             if ($result) {
