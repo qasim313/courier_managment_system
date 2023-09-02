@@ -16,8 +16,12 @@
 
   $sql = "UPDATE `shipment` SET `c_id`= $c_id , `status` = 'assign' WHERE sh_id = $sh_id";
   $connect->query($sql);
+  
+  echo "<script>alert('Shipment Has been Assigned');</script>";
+
+  echo "<script>location.href='AssignShipment.php'</script>";
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,4 +85,4 @@
     </div>
 </body>
 </html>
-
+ -->

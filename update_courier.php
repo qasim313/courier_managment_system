@@ -68,6 +68,10 @@
                 echo "<script>alert('Please enter valid contact number')</script>";
                 exit();
             }
+            if (strlen($pass) < 5) {
+                echo"<script> alert('Password should be of atleast 5 characters'); </script>";
+                exit();
+            }
             $sql = "select * from courier join assign using (c_id) where c_id = $c_id";
             $result =$connect->query($sql);
 
