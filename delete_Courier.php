@@ -10,11 +10,8 @@
 
     if ($result->num_rows > 0 ) {
 
-        echo "<script>alert('cant delete')</script>";
-        
+        echo "<script>alert('cant delete courier have pending Shipments')</script>";
         echo "<script>location.href='Manage_Courier.php'</script>";
-
-        
         exit();
     }
 

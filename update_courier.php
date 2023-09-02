@@ -71,14 +71,16 @@
             $sql = "select * from courier join assign using (c_id) where c_id = $c_id";
             $result =$connect->query($sql);
 
-            if ($result->num_rows > 0 ) {
+            if ($result->num_rows > 0  && $status == 'inactive') {
 
-                echo "<script>alert ('cant update now courier have pending shipments');</script>";
+                echo "<script>alert ('cant update status  now courier have pending shipments');</script>";
                 exit();
 
+            } else {
+                $sql ="UPDATE `courier` SET `status`='$status',`PASSWORD`='$pass',`address`='$c_location',`contact`='$c_contact' WHERE c_id = $c_id";
+                $result =$connect->query($sql);
+
             }
-            $sql ="UPDATE `courier` SET `status`='$status',`PASSWORD`='$pass',`address`='$c_location',`contact`='$c_contact' WHERE c_id = $c_id";
-            $result =$connect->query($sql);
             if ($result) {
                 echo "yes";
                 echo "<script>location.href='Manage_Courier.php'</script>";
