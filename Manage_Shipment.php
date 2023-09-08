@@ -28,7 +28,7 @@
         <th>Shipper ID</th>
         <th>Courier ID</th>
         <th>Update</th>
-        <th>Delete</th>
+        <!-- <th>Delete</th> -->
     </tr>
 
   <?php
@@ -60,10 +60,12 @@
                 <td  class="btn-instance">
                 <a href="updateShipment.php?sh_id='.$row['sh_id'].'&weight='.$row['weight'].'&category='.$row['category'].'&issue_date='.$row['issue_date'].'&delivery_date='.$row['delivery_date'].'&m_id='.$row['m_id'].'&s_id='.$row['s_id'].'&c_id='.$row['c_id'].'&status='.$row['status'].'">Update</a>
                 </td>
-                <td  class="btn-instance">
-                <a href="deleteShipment.php?sh_id='.$row['sh_id'].'">Delete</a>
-                </td>
+                
             </tr>';
+
+            // <td  class="btn-instance">
+            //     <a href="deleteShipment.php?sh_id='.$row['sh_id'].'">Delete</a>
+            //     </td>
     }
 ?>
 </table>

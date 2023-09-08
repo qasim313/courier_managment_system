@@ -117,14 +117,15 @@
                         while ( $row = $result->fetch_assoc()) {
 
                             if ($row['c_id']== null) {
-                                $c_id = "null";
+                                $c_id = "not assign";
                             } else {
                                 $c_id=$row['c_id'];
                             }
                            
                             if ($row['delivery_date'] < date("Y-m-d") && $row['status']!= 'delivered'){
                                 echo "
-
+                                <a href='updateShipment.php?sh_id=$row[sh_id]&weight=$row[weight]&category=$row[category]&issue_date=$row[issue_date]&delivery_date=$row[delivery_date]&status=$row[status]'>
+                                
                                     <tr style='background-color:red;'>
                                         <td>$row[sh_id]</td>
                                         <td>$row[status]</td>
@@ -136,7 +137,12 @@
                                         <td>$c_id</td>
                                     
                                     
-                                    <tr>
+                                    </tr>
+                                </a>
+
+                               
+
+                                    
                                 
                                 ";
                             } else {

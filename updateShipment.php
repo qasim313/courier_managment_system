@@ -8,9 +8,9 @@
     $category = $_GET['category'];
     $issue_date = $_GET['issue_date'];
     $delievery_date = $_GET['delivery_date'];
-    $m_id = $_GET['m_id'];
-    $s_id = $_GET['s_id'];
-    $c_id = $_GET['c_id'];
+    // $m_id = $_GET['m_id'];
+    // $s_id = $_GET['s_id'];
+    // $c_id = $_GET['c_id'];
     $status = $_GET['status'];
 
 ?>
@@ -40,20 +40,22 @@
         <label for="category">Category:</label>
         <input type="text" name="category" id="category" class="item1-2"  value ="<?php echo $category; ?>" readonly/>
         <label for="issue_date">Issue Date:</label>
-        <input type="date" name="issue_date" id="" value ="<?php echo $issue_date; ?>" readonly/>
+        <input type="date" name="issue_date" id="" value ="<?php echo $issue_date; ?>" />
         <label for="delievery_date">Delievery Date:</label>
         <input type="date" name="delievery_date" id="" value ="<?php echo $delievery_date; ?>">
         <label for="">Status:</label>
-        <select id="status" name="status" Value="<?php echo $status?>">
+        
+        <select id="status" name="status" value="Enter Status">
             <?php
             if($status == "in process"){
+                echo '<option value="in process" selected>in process</option>';      
+            }else if ($status == 'delivered'){
                 echo '<option value="delivered" selected>delivered</option>';
-                echo '<option value="in process" selected>in process</option>';   
-            ?>
-            <?php
-            }else{
-                echo '<option value="in process" selected>in process</option>';
-                echo '<option value="delivered" selected>delivered</option>';
+                echo '<option value="in process" s>in process</option>';
+            } else {
+                echo '<option value="assign" selected>assign</option>';
+                echo '<option value="delivered" >delivered</option>';
+                echo '<option value="in process" >in process</option>';
             }
             ?>   
         </select>

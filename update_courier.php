@@ -30,7 +30,7 @@
         <label for="id">Courier id:</label>
         <input type="text" name="id" id="id" class="item1-2" value ="<?php echo $c_id; ?>"  readonly/>
         <label for="name">Courier Name:</label>
-        <input type="text" name="name" id="name" class="item1-2" value ="<?php echo $c_name; ?>" readonly />
+        <input type="text" name="name" id="name" class="item1-2" value ="<?php echo $c_name; ?>"  />
         <label for="phone">Contact no:</label>
         <input type="tel" name="ph" id="ph" class="item1-2"  value ="<?php echo $c_contact; ?>"/>
         <label for="location">Address:</label>
