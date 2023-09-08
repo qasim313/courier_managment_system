@@ -101,6 +101,7 @@
                       <th >Receiver Name</th>
                       <th >Contact</th>
                       <th >Delivery Location</th>
+                      <th>Courier id</th>
                       
                   </tr>
                   ";
@@ -114,23 +115,48 @@
                         $result = $connect->query($sql);
 
                         while ( $row = $result->fetch_assoc()) {
-                           
-                        
-                            echo "
 
-                            <tr>
-                                <td>$row[sh_id]</td>
-                                <td>$row[status]</td>
-                                <td>$row[delivery_date]</td>
-                                <td>$row[sname]</td>
-                                <td>$row[name]</td>
-                                <td>$row[phone]</td>
-                                <td>$row[address]</td>
-                               
+                            if ($row['c_id']== null) {
+                                $c_id = "null";
+                            } else {
+                                $c_id=$row['c_id'];
+                            }
+                           
+                            if ($row['delivery_date'] < date("Y-m-d") && $row['status']!= 'delivered'){
+                                echo "
+
+                                    <tr style='background-color:red;'>
+                                        <td>$row[sh_id]</td>
+                                        <td>$row[status]</td>
+                                        <td>$row[delivery_date]</td>
+                                        <td>$row[sname]</td>
+                                        <td>$row[name]</td>
+                                        <td>$row[phone]</td>
+                                        <td>$row[address]</td>
+                                        <td>$c_id</td>
+                                    
+                                    
+                                    <tr>
+                                
+                                ";
+                            } else {
+                                echo "
+
+                                    <tr>
+                                        <td>$row[sh_id]</td>
+                                        <td>$row[status]</td>
+                                        <td>$row[delivery_date]</td>
+                                        <td>$row[sname]</td>
+                                        <td>$row[name]</td>
+                                        <td>$row[phone]</td>
+                                        <td>$row[address]</td>
+                                        <td>$c_id</td>
+                                    
+                                    
+                                    <tr>
                             
-                            <tr>
-                            
-                            ";
+                                ";
+                            }
                         
 
 

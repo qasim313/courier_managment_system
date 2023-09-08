@@ -35,7 +35,7 @@
 
     $s_id = $row1['s_id'];
 
-    echo $s_id;
+    // echo $s_id;
 
 
     

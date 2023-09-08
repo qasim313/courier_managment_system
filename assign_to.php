@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/TableStyle.css" />
 
-  <title>Document</title>
+  <title>courier detail for assigning</title>
 </head>
 <body>
 
@@ -48,31 +48,44 @@
  
 
                 <?php
-                
+
+
+                  if ($result->num_rows > 0) {
+
                     while ($row = $result->fetch_assoc()) {
-                        # code...
+                      # code...
 
-                        echo "
+                      echo "
 
 
-                        <tr> 
-                            <td>$row[c_id]</td>
-                            <td>$row[name]</td>
-                            <td>$row[status]</td>
-                            <td>$row[PASSWORD]</td>
-                            <td>$row[contact]</td>
-                            <td>$row[address]</td>
+                      <tr> 
+                          <td>$row[c_id]</td>
+                          <td>$row[name]</td>
+                          <td>$row[status]</td>
+                          <td>$row[PASSWORD]</td>
+                          <td>$row[contact]</td>
+                          <td>$row[address]</td>
 
-                            <td>
-                                <a href='AssignmentToCourier.php?c_id=$row[c_id]&sh_id=$sh_id'> assign </a>
-                            </td>
-                            
-                        </tr>
-                        
-                        ";
+                          <td>
+                              <a href='AssignmentToCourier.php?c_id=$row[c_id]&sh_id=$sh_id'> assign </a>
+                          </td>
+                          
+                      </tr>
+                      
+                      ";
 
-                        
-                    }
+                      
+                  }
+
+                  } else {
+
+                    echo "<script>alert('No Courier Avaliable Right Now');</script>";
+                    echo "<script>location.href='AssignShipment.php'</script>";
+                    
+
+                  }
+                
+                    
 
 
                     

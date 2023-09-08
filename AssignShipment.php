@@ -94,55 +94,65 @@
         $sql = "select  shipper.s_id , customer.address , customer.phone , 
         customer.name , shipment.sh_id , shipment.weight , shipment.category , 
         shipment.status  from shipper join customer USING (s_id) join shipment 
-        USING (s_id) where shipment.sh_id not in (SELECT sh_id from assign) and 
-        customer.address like '$area' and shipment.status like 'in process' ";
+        USING (s_id) where customer.address like '$area' and shipment.status like 'in process' ";
 
         $result = $connect->query($sql);
 
-
-        echo "
-        <div class='dashboard_table'>
-            
-            <table>
-            <tr>
-                <th>Shipper ID</th>
-                <th>Delivery Location</th>
-                <th>Contact</th>
-                <th>Customer Name</th>
-                <th>Shipment ID</th>
-                <th>Supplier weight</th>
-                <th>Delivery status</th>
-                <th>Category</th>
-                <th>Assign</th>
-            </tr> ";
-            while($row=$result->fetch_assoc()){
-              echo "
-                <tr>
-                <td>$row[s_id]</td>
-                <td>$row[address]</td>
-                <td>$row[phone]</td>
-                <td>$row[name]</td>
-                <td>$row[sh_id]</td>
-                <td>$row[weight]</td>
-                <td>$row[status]</td>
-                <td>$row[category]</td>
-                <td> <a href='assign_to.php?sh_id=$row[sh_id]&area=$area'>Assign to</a></td>
-                
-                </tr>
-
-              
-              ";
-            }
-
-          
-         
+        if($result->num_rows>0) {
           echo "
-          
-          </table>
-          </div>";
+          <div class='dashboard_table'>
+              
+              <table>
+              <tr>
+                  <th>Shipper ID</th>
+                  <th>Delivery Location</th>
+                  <th>Contact</th>
+                  <th>Customer Name</th>
+                  <th>Shipment ID</th>
+                  <th>Supplier weight</th>
+                  <th>Delivery status</th>
+                  <th>Category</th>
+                  <th>Assign</th>
+              </tr> ";
+              while($row=$result->fetch_assoc()){
 
+        
+
+                  echo "
+                  <tr>
+                  <td>$row[s_id]</td>
+                  <td>$row[address]</td>
+                  <td>$row[phone]</td>
+                  <td>$row[name]</td>
+                  <td>$row[sh_id]</td>
+                  <td>$row[weight]</td>
+                  <td>$row[status]</td>
+                  <td>$row[category]</td>
+                  <td> <a href='assign_to.php?sh_id=$row[sh_id]&area=$area'>Assign to</a></td>
+                  
+                  </tr>
   
-      }
+                
+                ";
+                
+                
+              }
+  
+            
+           
+            echo "
+            
+            </table>
+            </div>";
+  
+    
+        }else {
+          echo "<script>alert('No Shipment Found from your desired area');</script>";
+        }
+
+        }
+
+       
       
       ?>
 
