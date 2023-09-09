@@ -14,7 +14,7 @@
   $result=mysqli_query($connect,$sql);
   //sh_id	weight	category	issue_date	delievery_date	m_id	s_id	c_id
   ?>
-    <div class="dashboard_table">
+    <div class="dashboard_table" style="overflow-x:auto">
 
     <h1 style="color:black">Manage Shipment</h1>
     <table>

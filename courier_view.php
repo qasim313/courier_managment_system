@@ -125,7 +125,7 @@
     </nav>
 
     <div class="dashboard_table">
-        <h1 style="color:black">Shipments</h1>
+        <h1 style="color:black " style="overflow-x:auto">Shipments</h1>
         <table>
             <tr>
                 <th>Shipment Id</th>

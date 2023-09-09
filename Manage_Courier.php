@@ -25,7 +25,7 @@
 
 
 
-            <div class="dashboard_table">
+            <div class="dashboard_table" style="overflow-x:auto">
               <h1 style="color:black">Courier Detail</h1>
               <table>
                   <tr>

@@ -48,7 +48,7 @@
   include ("navBar.php");
   ?> 
 
-      <main> 
+      <main style="overflow-x:auto"> 
           <div class="container">
           <div class="card">
             <?php
@@ -92,7 +92,7 @@
 
 
             echo "
-              <table>
+              <table >
                   <tr>
                       <th >Id</th>
                       <th >delivery Status</th>

@@ -100,7 +100,7 @@
 
         if($result->num_rows>0) {
           echo "
-          <div class='dashboard_table'>
+          <div class='dashboard_table' style='overflow-x:auto'>
               
               <table>
               <tr>
