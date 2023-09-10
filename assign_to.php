@@ -21,7 +21,7 @@
 
 
   <?php
-    $sql = "SELECT * from courier WHERE c_id in (select DISTINCT courier.c_id  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '$area')  ";
+    $sql = "select DISTINCT courier.*  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '$area' ";
 
     $result = $connect->query($sql);
 
