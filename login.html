@@ -55,7 +55,8 @@
     }
     
     .input-group input[type="text"],
-    .input-group input[type="password"] {
+    .input-group input[type="password"] ,
+    select {
       width: 100%;
       padding: 10px;
       font-size: 16px;
@@ -67,7 +68,7 @@
     }
     
     .input-group input[type="text"]:focus,
-    .input-group input[type="password"]:focus {
+    .input-group input[type="password"]:focus ,select:focus{
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
     
@@ -107,6 +108,13 @@
         <div class="input-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div>
+          <label for="">Select Role</label>
+          <select name="role" id="" class="input-group">
+            <option value="manager">Manager</option>
+            <option value="courier">Courier</option>
+          </select>
         </div>
         <button class="login-button" type="submit">Login</a></button>
       </form>

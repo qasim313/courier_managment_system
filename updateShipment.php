@@ -79,7 +79,7 @@
             }
             if ($status == 'in process') {
                 $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status' , c_id=null WHERE `sh_id`='$sh_id'";
-            $result = $connect->query($sql);
+                $result = $connect->query($sql);
             } else {
                 $sql = "UPDATE `shipment` SET `weight`='$weight',`delivery_date`='$delievery_date', `status`='$status'  WHERE `sh_id`='$sh_id'";
                 $result = $connect->query($sql);

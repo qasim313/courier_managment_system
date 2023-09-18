@@ -28,7 +28,7 @@
         <label for="location">Address:</label>
         <input type="text" name="location" id=""required/>
         <label for="password">password:</label>
-        <input type="password" name="password" id=""required  placeholder="atleast 5 words"/>
+        <input type="password" name="password" id=""required  placeholder="atleast 5 digits"/>
 
         <label for="">status:</label>
         <select name="status" id="status" >

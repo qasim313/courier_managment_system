@@ -40,8 +40,17 @@
 
         <label for="">status:</label>
         <select name="status" id="status">
-          <option value="active">active</option>
-          <option value="inactive">inactive</option>
+          <?php
+            if ($status == 'active') {
+                echo "<option value='active'>active</option>
+                <option value='inactive'>inactive</option>";
+            } else {
+                echo "<option value='inactive'>inactive</option>
+                <option value='active'>active</option>";
+            }
+          
+          
+          ?>
         </select>
 
         <br />

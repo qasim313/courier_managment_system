@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="./Css/footer.css" />
     <footer>
       <div class="footer-content">
-        <h1 style="color:white;">Courier Management System</h1>
+        <h1 style="color:white;">Over The Clouds</h1>
         <p>
-          <b>Courier Management System</b>
-          Gift University,
-          Gujranwala, Gjw,
+          <b>Over The Clouds</b>
+          Main GT road,
+          Gujranwala,
           Pakistan,
           52250
         </p>

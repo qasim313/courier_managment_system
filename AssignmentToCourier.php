@@ -2,24 +2,36 @@
   include 'CheckifLogin.php';
   include('connection.php');
   
-  $sh_id = $_GET['sh_id'];
+  $sid = $_GET['id'];
   $c_id = $_GET['c_id'];
+  
+
+  $sh_id = explode (',',$sid);
+  
+  
    
   $sql = "select m_id from manager";
   $stmt = $connect->query($sql);
+  
 
   $result = $stmt->FETCH_ASSOC();
   $m_id = $result['m_id'];
 
-  $sql = "INSERT INTO `assign`(`m_id`, `sh_id`, `c_id`) VALUES ($m_id , $sh_id , $c_id )";
+
+  for ($i=0 ; $i<count($sh_id); $i++) {
+    # code...
+  
+    $id = (int)$sh_id[$i];
+     
+  $sql = "INSERT INTO `assign`(`m_id`, `sh_id`, `c_id`) VALUES ($m_id , $id , $c_id )";
   $connect->query($sql);
 
-  $sql = "UPDATE `shipment` SET `c_id`= $c_id , `status` = 'assign' WHERE sh_id = $sh_id";
+  $sql = "UPDATE `shipment` SET `c_id`= $c_id , `status` = 'assign' WHERE sh_id = $id";
   $connect->query($sql);
-  
+  }
   echo "<script>alert('Shipment Has been Assigned');</script>";
 
-  echo "<script>location.href='AssignShipment.php'</script>";
+  echo "<script>location.href='Dashboard.php'</script>";
 ?>
 <!-- <!DOCTYPE html>
 <html lang="en">

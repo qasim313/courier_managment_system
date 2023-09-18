@@ -147,8 +147,8 @@
                 <label for="">Shipper id:</label>
                 <input style="opacity:0.5;font-weight: bold;" type="text" name="s-id" id="" value="auto generated" readonly="read">
 
-                <label for="">shippment Weight:</label>
-                <input type="number" name="sh-weight" id="" required>
+                <label for="">shippment Weight in kgs:</label>
+                <input type="number" name="sh-weight" id=""  required>
 
                 <label for="">Category:</label>
                 <select name="type" id="payMethod">
@@ -162,7 +162,7 @@
                 <div class="right-data">
 
                   <label for="">Place Date:</label>
-                  <input type="date" name="p-date" id="" required>
+                  <input style="opacity:0.5;font-weight: bold;" type="text" name="p-date"  value =<?php echo date('Y-m-d'); ?> readonly>
 
                   <label for="">Delivery Date:</label>
                   <input type="date" name="d-date" id=""required>
@@ -176,19 +176,9 @@
                   <input type="tel" name="r-contact" id=""required>
     
                   <label for="">Receiver Address:</label>
-                  <!-- <input type="text" name="r-address" id=""> -->
+                  <input type="text" name="r-address" id="" placeholder="e.g:Wapda Town Gujranwala">
                   
-                  <select name="r-address" id="" value="Select Area">
-                    <option value="Wapda Town">Wapda Town</option>
-                    <option value="Satellite Town">Satellite Town</option>
-                    <option value="Bagbanpura">Bagbanpura</option>
-                    <option value="Ghanta Ghar">Ghanta Ghar</option>
-                    <option value="Jinah Road">Jinah Road</option>
-                    <option value="Model Town">Model Town</option>
-                    <option value="Garden Town">Garden Town</option>
-                    <option value="Urdu Bazar">Urdu Bazar</option>
-                    <option value="People Colony">People Colony</option>
-                  </select>
+                  
 
                   <label for="">Shippment status:</label>
                   <input type="text" name="status" value="in process" readonly>
@@ -216,6 +206,23 @@
       </form>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     <script>
     

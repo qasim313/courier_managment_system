@@ -138,9 +138,11 @@
             </tr>
             <?php
             $sql = "select shipment.* , customer.address , customer.phone from shipment join shipper
-             using(s_id) join customer using(s_id)  WHERE shipment.c_id = $receivedValue  order by status desc";
+             using(s_id) join customer using(s_id)  WHERE shipment.c_id = $receivedValue  order by status ";
             $result = $connect->query($sql);
             while ($row = $result->fetch_assoc()) {
+
+           
                 echo "
                     <tr>
                         <td>$row[sh_id]</td>
@@ -154,6 +156,9 @@
                         </td>
                     </tr>
                 ";
+
+        
+                
             }
             ?>
         </table>
@@ -172,6 +177,7 @@
                 <label for="payMethod">Status: </label><br>
                 <select class="txt" id="payMethod">
                     <option value="delivered">delivered</option>
+                    <option value="rejected">Rejected</option>
                 </select>
             </div>
             <div class="modal-footer">

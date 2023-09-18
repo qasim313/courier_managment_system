@@ -62,10 +62,6 @@
                 </td>
                 
             </tr>';
-
-            // <td  class="btn-instance">
-            //     <a href="deleteShipment.php?sh_id='.$row['sh_id'].'">Delete</a>
-            //     </td>
     }
 ?>
 </table>

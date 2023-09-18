@@ -3,9 +3,28 @@
 
   include('connection.php');
   include('navBar.php');
+    if(!isset($_POST['ids'])) {
+      echo "<script>alert('please Select Shipment!!!');</script>";
+      echo "<script>location.href='AssignShipment.php'</script>";
 
-  $sh_id = $_GET['sh_id'];
-  $area = $_GET['area'];
+
+    }
+  
+    $r = $_POST['ids'];
+    $area=$_REQUEST['area'];
+
+    $data = array();
+    
+
+    foreach($r as  $rowName ) {
+        $sql = "select * from shipment where sh_id = '$rowName'";
+        $res = $connect->query($sql);
+        $data [] = $res->fetch_assoc()['sh_id'];
+      
+    }
+    $sh_id = implode(',' , $data);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +86,7 @@
                           <td>$row[address]</td>
 
                           <td>
-                              <a href='AssignmentToCourier.php?c_id=$row[c_id]&sh_id=$sh_id'> assign </a>
+                              <a href='AssignmentToCourier.php?c_id=$row[c_id]&id=$sh_id'> assign </a>
                           </td>
                           
                       </tr>
@@ -97,8 +116,12 @@
 
 
         <?php
+           
              $connect->close(); 
         ?>
   
 </body>
 </html>
+<?php
+  include('footer.php');
+?>

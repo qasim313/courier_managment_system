@@ -74,13 +74,13 @@
         </div>
         <div class="card">
             <?php
-            $sql ="SELECT * FROM  shipment WHERE `status` like 'assign' ";
+            $sql ="SELECT * FROM  shipment WHERE `status` like 'rejected' ";
             $r = $connect->query($sql);
             $num3 = $r->num_rows;
             ?>
             <div class="content">
                 <h2 class='number'><?php echo "$num3" ?></h2>
-                <h3 class='title'>Assigned Shipments</h3>
+                <h3 class='title'>Rejected Shipments</h3>
             </div>
         </div>
 
@@ -122,9 +122,9 @@
                                 $c_id=$row['c_id'];
                             }
                            
-                            if ($row['delivery_date'] < date("Y-m-d") && $row['status']!= 'delivered'){
+                            if (($row['delivery_date'] < date("Y-m-d") && $row['status']!= 'delivered') || $row['status'] == 'rejected'){
                                 echo "
-                                <a href='updateShipment.php?sh_id=$row[sh_id]&weight=$row[weight]&category=$row[category]&issue_date=$row[issue_date]&delivery_date=$row[delivery_date]&status=$row[status]'>
+                                
                                 
                                     <tr style='background-color:red;'>
                                         <td>$row[sh_id]</td>
@@ -138,7 +138,7 @@
                                     
                                     
                                     </tr>
-                                </a>
+                            
 
                                
 

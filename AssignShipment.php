@@ -59,6 +59,16 @@
   <?php
     include ("navBar.php");
     include ("connection.php");
+
+    $sql= " select distinct customer.address from customer join shipper using(s_id) join shipment using(s_id) where status like 'in process' ";
+
+        
+
+        $result = $connect->query($sql);
+        if ($result->num_rows<=0) {
+          echo "<script>alert('No shipment Found to Assign');</script>";
+          echo "<script>location.href='dashboard.php'</script>";
+        }
   ?>
 
 
@@ -69,15 +79,13 @@
       <form  method="post">
 
       <select name="area" id="" value="Select Area">
-        <option value="Wapda Town">Wapda Town</option>
-        <option value="Satellite Town">Satellite Town</option>
-        <option value="Bagbanpura">Bagbanpura</option>
-        <option value="Ghanta Ghar">Ghanta Ghar</option>
-        <option value="Jinah Road">Jinah Road</option>
-        <option value="Model Town">Model Town</option>
-        <option value="Garden Town">Garden Town</option>
-        <option value="Urdu Bazar">Urdu Bazar</option>
-        <option value="People Colony">People Colony</option>
+        <?php
+        
+
+        while ($row=$result->fetch_assoc())
+          echo "<option value='$row[address]'>$row[address]</option>";
+        
+        ?>
       </select>
       <br>
       <input type="submit" value="Enter" name="submit">
@@ -94,12 +102,14 @@
         $sql = "select  shipper.s_id , customer.address , customer.phone , 
         customer.name , shipment.sh_id , shipment.weight , shipment.category , 
         shipment.status  from shipper join customer USING (s_id) join shipment 
-        USING (s_id) where customer.address like '$area' and shipment.status like 'in process' ";
+        USING (s_id) where customer.address like '%$area' and shipment.status like 'in process' ";
 
         $result = $connect->query($sql);
 
         if($result->num_rows>0) {
+
           echo "
+          <form action='assign_to.php' method='post'>
           <div class='dashboard_table' style='overflow-x:auto'>
               
               <table>
@@ -112,12 +122,9 @@
                   <th>Supplier weight</th>
                   <th>Delivery status</th>
                   <th>Category</th>
-                  <th>Assign</th>
+                  <th>Select</th>
               </tr> ";
-              while($row=$result->fetch_assoc()){
-
-        
-
+              while($row=$result->fetch_assoc()){        
                   echo "
                   <tr>
                   <td>$row[s_id]</td>
@@ -128,7 +135,7 @@
                   <td>$row[weight]</td>
                   <td>$row[status]</td>
                   <td>$row[category]</td>
-                  <td> <a href='assign_to.php?sh_id=$row[sh_id]&area=$area'>Assign to</a></td>
+                  <td> <input type='checkbox' name='ids[]' value='$row[sh_id]'></td>
                   
                   </tr>
   
@@ -141,9 +148,15 @@
             
            
             echo "
+            <input style='display:none;' type='text' name='area' value='$area'>
+             
             
             </table>
-            </div>";
+            <br>
+            <div class='box'><input type='submit' value='assign' name='assign'></div>
+            </div>
+            <form>
+            ";
   
     
         }else {
