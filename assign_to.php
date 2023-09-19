@@ -40,7 +40,7 @@
 
 
   <?php
-    $sql = "select DISTINCT courier.*  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '$area' ";
+    $sql = "select DISTINCT courier.*  FROM courier JOIN assign  USING (c_id) JOIN shipment USING (sh_id) JOIN shipper USING(s_id) JOIN customer USING (s_id) WHERE courier.status like 'active' and customer.address like '%$area%' ";
 
     $result = $connect->query($sql);
 
@@ -86,7 +86,7 @@
                           <td>$row[address]</td>
 
                           <td>
-                              <a href='AssignmentToCourier.php?c_id=$row[c_id]&id=$sh_id'> assign </a>
+                              <a href='AssignmentToCourier.php?c_id=$row[c_id]&id=$sh_id'>  Click Here</a>
                           </td>
                           
                       </tr>
