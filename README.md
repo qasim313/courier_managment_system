@@ -25,7 +25,7 @@ MySQL database server
 If you are using XAMPP on Windows clone it inside C:\xampp\htdocs
 
 
-2 .  Create a local database named couriersystem using a tool like phpMyAdmin or the MySQL command line.
+2 .  Create a local database named "couriersystem" using a tool like phpMyAdmin or the MySQL command line.
 
 
 3 .  Import the provided SQL dump file (CourierManagementSystem.txt) into the couriersystem database.
