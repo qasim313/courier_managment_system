@@ -74,7 +74,7 @@ Role: Manager
     
 ## Contributors
 - Qasim Malik
-- Hashir Rana
+- Hashir Ansari (hashiransari011@gmail.com)
 - Mateen Chandio
 - Ustad Abdul Rehman 
 
