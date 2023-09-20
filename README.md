@@ -2,6 +2,10 @@
 # Mini World Courier Management System
 Welcome to the Mini World Courier Management System! This web application is designed to help manage courier operations with separate views for managers and couriers. It's built using HTML, CSS, JavaScript, and PHP.
 
+## ERD And RM
+[Link to My PDF](https://github.com/qasim313/courier_managment_system/blob/main/assets/Erd%20and%20Rm%20Courier%20managment%20system.pdf)
+
+
 ## Installation and Setup
 
 Follow these instructions to set up and run the Mini World Courier Management System locally:
