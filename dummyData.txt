@@ -1,4 +1,0 @@
-INSERT INTO `shipper`(`name`, `address`, `contact`, `m_id`) VALUES ('saleem','gujranwala Pakisten','03146788962','1122');
-INSERT INTO `customer`(`name`, `phone`, `address`, `s_id`) VALUES ('nasir','03145677898','wapda town',21001);
-INSERT INTO `shipment`( `weight`, `category`, `issue_date`, `delivery_date`, `status`, `m_id`, `s_id`) VALUES (10,'Document shipment','2023-12-09','2023-12-14','in process',1122,21001);
-INSERT INTO `courier`( `name`, `status`, `PASSWORD`, `address`, `contact`, `m_id`) VALUES ('Raheem','active','12345','model town Gujranwala',03167899895,1122);
