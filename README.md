@@ -81,8 +81,8 @@ Role: Manager
 ## Contributors
 - Qasim Malik
 - Hashir Ansari
-- Mateen Chandio
-- Ustad Abdul Rehman 
+- Abdul Mateen
+- Abdul Rehman Khan
 
 
 ## License
